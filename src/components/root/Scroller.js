@@ -4,9 +4,9 @@ import style from './root.module.css'
 
 export const Scroller = ({text, totalHeight, position, color, handleWidthChange, headerHeight}) => {
     const {height}= useWindowDimensions()
-    const textHeight = (height - headerHeight)/text.length
+    const textHeight = (height-headerHeight)/text.length
     const textWidth = textHeight*.7
-    const hlLength = 100*(height-headerHeight)/totalHeight
+    const hlLength = 100*height/totalHeight
     const hlStart = 100*position/totalHeight
     useEffect(()=>{
         handleWidthChange(textWidth)
@@ -14,8 +14,8 @@ export const Scroller = ({text, totalHeight, position, color, handleWidthChange,
     
     return (
         <div className={style.scroller}
-            style={{top: headerHeight}}
-            >
+            style={{ top: headerHeight}}
+        >
            <p
            style={{
             fontSize: `${textHeight}px`,

@@ -41,6 +41,7 @@ export const Root = () => {
                 totalHeight={scrollHeight} 
                 position={scrollTop}
                 handleWidthChange={handleWidthChange}
+                headerHeight={headerHeight}
                 />
             <Header headerRef={headerRef}/>
             <main 
