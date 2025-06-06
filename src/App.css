@@ -82,3 +82,9 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
+/* general typography */
+@font-face {
+  font-family: 'Highlights';
+  src: url('./assets/fonts/Kanbe-1j61B.ttf');
+}

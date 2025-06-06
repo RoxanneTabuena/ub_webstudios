@@ -1,6 +1,9 @@
+
+
 export const Landing = () => {
+
     return (
-        <div>
+        <div style={{height: `1600px`}}>
             landing
         </div>
     )

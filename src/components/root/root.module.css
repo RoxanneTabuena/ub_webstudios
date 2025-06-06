@@ -1,0 +1,29 @@
+body{
+    scrollbar-color: transparent transparent;
+    scrollbar-width: ;
+}
+
+header{
+    position: fixed;
+}
+
+main{
+    position: relative;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.scroller{
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-family: 'Highlights';
+}
+
+.scroller >p {
+    line-height: 1;
+    overflow-wrap: break-word;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+}
