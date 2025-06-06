@@ -1,6 +1,5 @@
-body{
-    scrollbar-color: transparent transparent;
-    scrollbar-width: ;
+main::-webkit-scrollbar {
+  display: none;
 }
 
 header{
@@ -8,9 +7,19 @@ header{
 }
 
 main{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     position: relative;
     height: 100vh;
     overflow-y: scroll;
+}
+
+.scrollEvents{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    height: 100vh;
 }
 
 .scroller{
@@ -18,6 +27,7 @@ main{
     top: 0;
     right: 0;
     font-family: 'Highlights';
+    width: fit-content;
 }
 
 .scroller >p {
