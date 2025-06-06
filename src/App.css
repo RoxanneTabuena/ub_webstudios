@@ -88,3 +88,8 @@ textarea:not([rows]) {
   font-family: 'Highlights';
   src: url('./assets/fonts/Kanbe-1j61B.ttf');
 }
+
+@font-face {
+  font-family: 'Rare';
+  src: url('./assets/fonts/MinisimRegular-drJmE.ttf');
+}

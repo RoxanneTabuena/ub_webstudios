@@ -9,10 +9,15 @@ import style from "./root.module.css"
 
 
 export const Root = () => {
+    // scroller related variables
     const mainRef = useRef(null)
     const {height} = useWindowDimensions()
     const { scrollTop, scrollHeight } = useScrollMetrics(mainRef)
     const [ scrollWidth, setScrollWidth] = useState(10)
+    // header related variables
+    const headerRef = useRef(null)
+
+    // scroller related handlers
     const handleWidthChange = (width) => {
         setScrollWidth(width)
     }
@@ -21,6 +26,7 @@ export const Root = () => {
             top: e.clientY*scrollHeight/height
         })
     }
+
     return (
         <div className={style.root}>
             <div 
@@ -28,17 +34,18 @@ export const Root = () => {
                 style={{width: `${scrollWidth}px`}}
                 onClick={handleScrollClick}
             >
-
             </div>
             <Scroller 
-                text="unboundgraphics" 
-                color="black" 
+                text="UNBOUNDGRAPHICS" 
+                color="white" 
                 totalHeight={scrollHeight} 
                 position={scrollTop}
                 handleWidthChange={handleWidthChange}
                 />
-            <Header />
-            <main ref={mainRef}>
+            <Header ref={headerRef}/>
+            <main 
+                ref={mainRef}
+                style={{marginTop: ''}}>
                 <Outlet/>
             </main>
             <Footer />
