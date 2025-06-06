@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { useScrollMetrics } from '../../hooks/useScrollMetrics'
 import { useWindowDimensions } from '../../hooks/useWindowDimensions'
+import { useComponentHeight } from '../../hooks/useComponentHeight'
 import { Outlet } from 'react-router-dom'
 import { Header } from './Header'
 import { Footer } from './Footer'
@@ -15,8 +16,7 @@ export const Root = () => {
     const { scrollTop, scrollHeight } = useScrollMetrics(mainRef)
     const [ scrollWidth, setScrollWidth] = useState(10)
     // header related variables
-    const headerRef = useRef(null)
-
+    const [headerRef, headerHeight] = useComponentHeight()
     // scroller related handlers
     const handleWidthChange = (width) => {
         setScrollWidth(width)
@@ -42,10 +42,10 @@ export const Root = () => {
                 position={scrollTop}
                 handleWidthChange={handleWidthChange}
                 />
-            <Header ref={headerRef}/>
+            <Header headerRef={headerRef}/>
             <main 
                 ref={mainRef}
-                style={{marginTop: ''}}>
+                style={{paddingTop: `${headerHeight}px`}}>
                 <Outlet/>
             </main>
             <Footer />

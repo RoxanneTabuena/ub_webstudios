@@ -1,6 +1,6 @@
-export const Header = () => {
+export const Header = ({headerRef}) => {
     return (
-        <header>
+        <header ref={headerRef}>
             header
         </header>
     )
