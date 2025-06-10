@@ -42,3 +42,31 @@ main{
     color: transparent;
     -webkit-background-clip: text;
 }
+/* general header */
+header{
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-end;
+}
+
+nav> h2{
+    font-family: 'Rare';
+}
+/* responsive mobile */
+@media only screen and (max-width: 480px) {
+    /* mobile header */
+    header>img{
+        max-width: 33%;
+    }
+    nav>h2{
+        /* margin-left: 2rem; */
+    }
+}

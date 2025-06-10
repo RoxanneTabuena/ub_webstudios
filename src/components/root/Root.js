@@ -36,7 +36,7 @@ export const Root = () => {
             >
             </div>
             <Scroller 
-                text="UNBOUNDGRAPHICS" 
+                text="UNBOUNDSTUDIO" 
                 color="white" 
                 totalHeight={scrollHeight} 
                 position={scrollTop}
