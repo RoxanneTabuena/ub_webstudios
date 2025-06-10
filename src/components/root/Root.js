@@ -32,7 +32,10 @@ export const Root = () => {
         <div className={style.root}>
             <div 
                 className={style.scrollEvents}
-                style={{width: `${scrollWidth}px`}}
+                style={{
+                    width: `${scrollWidth}px`,
+                    top: headerHeight
+                }}
                 onClick={handleScrollClick}
             >
             </div>

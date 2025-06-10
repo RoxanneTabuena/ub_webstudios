@@ -1,10 +1,11 @@
 /* general nav */
 nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 .menu{
     display: flex;
+    justify-content: space-between;
 }
 
 /* responsive mobile */
@@ -12,5 +13,9 @@ nav{
     /* mobile nav */
     nav{
         width: 65%;
+    }
+
+    .icon{
+        max-width: 20%;
     }
 }
