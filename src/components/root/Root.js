@@ -42,13 +42,13 @@ export const Root = () => {
             <ScrollToTop ref={mainRef}/>
             <Scroller 
                 text="UNBOUNDSTUDIO" 
-                color="white" 
+                color="rgba(255,255,255,.33)" 
                 totalHeight={scrollHeight} 
                 position={scrollTop}
                 handleWidthChange={handleWidthChange}
                 headerHeight={headerHeight}
                 />
-            <Header headerRef={headerRef}/>
+            <Header headerRef={headerRef} logoRatio={headerHeight-scrollTop}/>
             <main 
                 ref={mainRef}
                 style={{paddingTop: `${headerHeight}px`}}>
