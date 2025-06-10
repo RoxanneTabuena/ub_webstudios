@@ -58,7 +58,7 @@ header{
     font-family: 'Rare';
 }
 
-header>div{
+header>a{
     text-align: center;
 }
 
@@ -76,7 +76,7 @@ footer>a>button{
     header, footer{
         padding: 3px;
     }
-    header>div{
+    header>a{
         max-width: 30%;
     }
 }
