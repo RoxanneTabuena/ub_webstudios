@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { useScrollMetrics } from '../../hooks/useScrollMetrics'
 import { useWindowDimensions } from '../../hooks/useWindowDimensions'
 import { useComponentHeight } from '../../hooks/useComponentHeight'
+import { ScrollToTop } from '../../hooks/ScrollToTop'
 import { Outlet } from 'react-router-dom'
 import { Header } from './Header'
 import { Footer } from './Footer'
@@ -35,6 +36,7 @@ export const Root = () => {
                 onClick={handleScrollClick}
             >
             </div>
+            <ScrollToTop ref={mainRef}/>
             <Scroller 
                 text="UNBOUNDSTUDIO" 
                 color="white" 
