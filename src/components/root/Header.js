@@ -1,4 +1,4 @@
-import { Nav } from './Nav'
+import { Nav } from './nav/Nav'
 import logo from '../../assets/img/Logo_white 2.png'
 export const Header = ({headerRef}) => {
     return (

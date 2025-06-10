@@ -1,0 +1,16 @@
+/* general nav */
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+.menu{
+    display: flex;
+}
+
+/* responsive mobile */
+@media only screen and (max-width: 480px) {
+    /* mobile nav */
+    nav{
+        width: 65%;
+    }
+}

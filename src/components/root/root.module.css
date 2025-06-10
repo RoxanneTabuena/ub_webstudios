@@ -63,13 +63,6 @@ header>div{
     text-align: center;
 }
 
-nav{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: flex-end;
-}
-
 /* general footer */
 footer>a>button{
     background-color: white;
