@@ -11,6 +11,12 @@ main{
     height: 100vh;
     overflow-y: scroll;
 }
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-family: 'Rare';
+}
 /* general scroller */
 main::-webkit-scrollbar {
   display: none;
@@ -43,11 +49,18 @@ main{
     -webkit-background-clip: text;
 }
 /* general header */
+
+
 header{
     display: flex;
     justify-content: space-between;
     height: fit-content;
     align-items: center;
+    font-family: 'Rare';
+}
+
+header>div{
+    text-align: center;
 }
 
 nav{
@@ -57,16 +70,21 @@ nav{
     align-content: flex-end;
 }
 
-nav> h2{
-    font-family: 'Rare';
+/* general footer */
+footer>a>button{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    font-size: 1.3rem;
 }
+
 /* responsive mobile */
 @media only screen and (max-width: 480px) {
-    /* mobile header */
-    header>img{
-        max-width: 33%;
+    /* mobile header & footer */
+    header, footer{
+        padding: 3px;
     }
-    nav>h2{
-        /* margin-left: 2rem; */
+    header>div{
+        max-width: 30%;
     }
 }
