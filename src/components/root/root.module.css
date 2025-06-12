@@ -54,7 +54,7 @@ header{
     display: flex;
     justify-content: space-between;
     height: fit-content;
-    align-items: flex-start;
+    align-items: center;
     font-family: 'Rare';
 }
 
