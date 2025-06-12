@@ -1,0 +1,45 @@
+.banner>p{
+    max-width: 90%;
+    margin: auto;
+}
+
+.banner>h2, .banner>h4{
+    font-family: 'Titles';
+    margin: 0 5px 0 5px;
+}
+
+.bannerHead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.left{
+    text-align: left;
+}
+
+.tops{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.bannerButts{
+    display: flex;
+    justify-content: space-around;
+    width: inherit;
+}
+/* responsive mobile */
+@media only screen and (max-width: 480px) {
+    /* mobile layout */
+    .landing{
+        padding: 20px 5px 0 5px;
+    }
+    /* mobile typography */
+    h2{
+        font-size: 33px;
+    }
+
+
+}
