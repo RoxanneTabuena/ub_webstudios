@@ -19,18 +19,18 @@ export const Nav = () => {
         <div className={style.menu}>
             <div>
                 <NavLink to="/about">
-                    <h2>About</h2>
+                    <h3>About</h3>
                 </NavLink>
                 <NavLink to="/services">
-                    <h2>Services</h2>
+                    <h3>Services</h3>
                 </NavLink>
             </div>
             <div>
                 <NavLink to="/pricing">
-                    <h2>Pricing</h2>
+                    <h3>Pricing</h3>
                 </NavLink>
                 <NavLink to="/work">
-                    <h2>Work</h2>
+                    <h3>Work</h3>
                 </NavLink>
             </div>
             <MenuIcon open={true} handleMenuToggle={handleMenuToggle}/>
