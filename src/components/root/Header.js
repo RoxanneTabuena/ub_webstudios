@@ -3,9 +3,12 @@ import { NavLink } from 'react-router-dom'
 import { Nav } from './nav/Nav'
 import logo from '../../assets/img/Logo_white 2.png'
 export const Header = ({headerRef, logoRatio}) => {
-    const [limit, setLimit] = useState(null)
+    // control display style
     const [display, setDisplay] = useState('full')
+    // control logo sizing
+    const [limit, setLimit] = useState(null)
     const [width, setWidth] = useState('100%')
+    // shrink display on scroll, grow display as top of page approaches
     useEffect(()=>{
         if(!limit){
             setLimit(logoRatio)
