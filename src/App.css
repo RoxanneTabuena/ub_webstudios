@@ -95,3 +95,12 @@ textarea:not([rows]) {
   font-family: 'Rare';
   src: url('./assets/fonts/MinisimRegular-drJmE.ttf');
 }
+
+@font-face {
+  font-family: 'Text';
+  src: url('./assets/fonts/arialroundedmtbold.ttf')
+}
+
+p {
+  font-family: 'Text',Arial, Helvetica, sans-serif;
+}
