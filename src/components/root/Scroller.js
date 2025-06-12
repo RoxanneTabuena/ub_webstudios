@@ -20,7 +20,7 @@ export const Scroller = ({text, totalHeight, position, color, handleWidthChange,
            style={{
             fontSize: `${textHeight}px`,
             width: `${textWidth}px`,
-            backgroundImage: `linear-gradient(transparent ${hlStart}%, ${color}, transparent ${hlStart+hlLength}%, transparent)`
+            backgroundImage: `linear-gradient(rgba(255,255,255,.05) ${hlStart}%, ${color}, rgba(255,255,255,.05) ${hlStart+hlLength}%, rgba(255,255,255,.05))`
            }}
            >{text}</p> 
         </div>
