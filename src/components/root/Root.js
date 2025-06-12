@@ -13,7 +13,7 @@ import style from "./root.module.css"
 export const Root = () => {
     // scroller related variables
     const mainRef = useRef(null)
-    const {height} = useWindowDimensions()
+    const {height, width} = useWindowDimensions()
     const { scrollTop, scrollHeight } = useScrollMetrics(mainRef)
     const [ scrollWidth, setScrollWidth] = useState(10)
     // header related variables
@@ -51,7 +51,10 @@ export const Root = () => {
             <Header headerRef={headerRef} logoRatio={headerHeight-scrollTop}/>
             <main 
                 ref={mainRef}
-                style={{paddingTop: `${headerHeight}px`}}>
+                style={{
+                    paddingTop: `${headerHeight}px`,
+                    width: `${width-scrollWidth}px`
+                    }}>
                 <Outlet/>
             </main>
             <Footer />
