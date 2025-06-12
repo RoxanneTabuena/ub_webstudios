@@ -1,11 +1,8 @@
-import { NavLink } from "react-router-dom"
-import style from './root.module.css'
+import { NavButton } from "../../blocks/NavButton"
 export const Footer = () => {
     return (
         <footer>
-            <NavLink to="/book">
-                <button >Book</button>
-            </NavLink>
+           <NavButton text="Book" path="/book" />
         </footer>
     )
 }
