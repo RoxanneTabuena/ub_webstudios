@@ -20,12 +20,13 @@ export const Banner = () => {
                     </div>
                 </div>
             </div>
+            <img src={demo} alt="a laptop and phone showing responsive versions of the same website"></img>
+            <p style={{textAlign: `${orientation === 'portrait' && 'center'}`}}>No page builders or WordPress. We offer 100% hand-coded websites with superior results starting at $175/mo as well as Google Ads and SEO services.</p>
             <div className={style.bannerButts}>
                 <NavButton text="start quote" path="/book"/>
                 <NavButton text="about studio" path="/about" backgroundColor="fuchsia"/>
             </div>
-            <p style={{textAlign: `${orientation === 'portrait' && 'center'}`}}>No page builders or WordPress. We offer 100% hand-coded websites with superior results starting at $175/mo as well as Google Ads and SEO services.</p>
-            <img src={demo} alt="a laptop and phone showing responsive versions of the same website"></img>
         </div>
     )
 }
+

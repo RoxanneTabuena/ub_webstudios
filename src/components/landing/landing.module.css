@@ -1,9 +1,10 @@
+/* general banner */
 .banner>p{
     max-width: 90%;
-    margin: auto;
+    margin: 7px auto;
 }
 
-.banner>h2, .banner>h4{
+.bannerHead>*{
     font-family: 'Titles';
     margin: 0 5px 0 5px;
 }
