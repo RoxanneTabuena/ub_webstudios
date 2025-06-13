@@ -1,12 +1,12 @@
 /* general nav */
 nav{
     display: flex;
-    justify-content: flex-end;
 }
 .menu{
     display: flex;
     justify-content: space-between;
 }
+
 
 /* responsive mobile */
 @media only screen and (max-width: 480px) {
@@ -14,13 +14,34 @@ nav{
     .menu>div>a>h3{
         font-size: 24px;
     }
-
+    
     /* mobile nav */
     nav{
         max-width: 65%;
+        justify-content: flex-end;
     }
 
     .icon{
         max-width: 20%;
+    }
+
+    .mobMenu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+/* responsive desktop */
+@media only screen and (min-width: 481px) {
+    /* desktop typography */
+    .menu>div>a>h3{
+        font-size: 50px;
+    }
+
+    /* desktop nav */
+    nav{
+        font-size: 45px;
+        justify-content: space-between;
+        width: 75%;
     }
 }
