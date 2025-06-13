@@ -62,10 +62,16 @@ header>a{
     text-align: center;
 }
 
+
+
+.black{
+    background-color: black;
+}
+
 /* responsive mobile */
 @media only screen and (max-width: 480px) {
     /* mobile header & footer */
-    header, footer{
+    body{
         padding: 3px;
     }
     header>a{
@@ -75,7 +81,7 @@ header>a{
 /* responsive desktop */
 @media only screen and (min-width: 481px) {
     /* desktop header & footer */
-    header, footer{
+    body{
         padding: 3px;
     }
     header>a{

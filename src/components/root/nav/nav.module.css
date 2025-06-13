@@ -1,12 +1,18 @@
 /* general nav */
 nav{
     display: flex;
+    width: fit-content;
 }
 .menu{
     display: flex;
     justify-content: space-between;
 }
 
+.menuLink{
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
 
 /* responsive mobile */
 @media only screen and (max-width: 480px) {

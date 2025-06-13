@@ -18,16 +18,16 @@ export const Nav = () => {
     }
     const nav = [
         <NavLink to="/about">
-            <h3>About</h3>
+            <h3 className={style.menuLink}>About</h3>
         </NavLink>,
         <NavLink to="/pricing">
-            <h3>Pricing</h3>
+            <h3 className={style.menuLink}>Pricing</h3>
         </NavLink>,
         <NavLink to="/services">
-            <h3>Services</h3>
+            <h3 className={style.menuLink}>Services</h3>
         </NavLink>,
         <NavLink to="/work">
-            <h3>Work</h3>
+            <h3 className={style.menuLink}>Work</h3>
         </NavLink>
     ]
     const expand = (

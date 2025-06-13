@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Nav } from './nav/Nav'
 import logo from '../../assets/img/Logo_white 2.png'
+import style from './root.module.css'
 export const Header = ({headerRef, logoRatio}) => {
     // control display style
     const [display, setDisplay] = useState('full')
@@ -27,9 +28,11 @@ export const Header = ({headerRef, logoRatio}) => {
         }
     }, [logoRatio, limit])
     const full = (
-        <header ref={headerRef}>
+        <header ref={headerRef}
+        >
             <NavLink to="/">            
                 <img 
+                    className={style.black}
                     src={logo} 
                     alt="unbound studio logo"
                     style={{
@@ -38,13 +41,16 @@ export const Header = ({headerRef, logoRatio}) => {
                     ></img>
                 <h3>Web Studio</h3>
             </NavLink>
-            <Nav />
+            <Nav className={style.black}
+            
+            />
         </header>
     )
     const mini = (
         <header ref={headerRef}>
             <NavLink to="/">            
                 <img 
+                    className={style.black}
                     src={logo} 
                     alt="unbound studio logo"
                     style={{
@@ -52,7 +58,7 @@ export const Header = ({headerRef, logoRatio}) => {
                     }}
                 ></img>
             </NavLink>
-            <Nav />
+            <Nav className={style.black}/>
         </header>
     )
     return (
