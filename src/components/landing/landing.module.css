@@ -1,6 +1,6 @@
 /* general banner */
+
 .banner>p{
-    max-width: 90%;
     margin: 7px auto;
 }
 
@@ -33,17 +33,84 @@
 }
 
 /* general promo */
+.promo{
+    display: flex;
+}
 
+.cardContainer{
+    perspective: 400px;
+    height: 300px;
+    width: 200px;
+}
+.promoCard{
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.cardFront, .cardBack, .promoCard{
+    height: inherit;
+    width: inherit;
+}
+ .cardContainer:hover .promoCard, .flipped {
+    transform: rotateY(180deg);
+}
+.cardFront,
+.cardBack {
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.cardFront{
+    background-color: chartreuse;
+}
+.cardBack{
+    background-color: blueviolet;
+        transform: rotateY(180deg);
+}
 
-/* responsive mobile */
+/* mobile specifics*/
 @media only screen and (max-width: 480px) {
     /* mobile layout */
     .landing{
         padding: 20px 5px 0 5px;
     }
+    .banner>p{
+        max-width: 90%;
+    }
     /* mobile typography */
     h2{
         font-size: 33px;
+    }
+
+
+}
+/* desktop specifics */
+@media only screen and (min-width: 481px) {
+    /*desktop layout */
+    .landing{
+        padding: 20px 5px 0 5px;
+    }
+    .banner{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin: auto;
+        padding: 5%;
+    }
+    .banner>img{
+        max-height: 30vh;
+    }
+    .bannerLeft{
+        max-width: 476px;
+    }
+
+    .bannerLeft>*{
+        margin-top: 20px
+    }
+    /* desktop typography */
+    h2{
+        font-size: 50px;
     }
 
 
