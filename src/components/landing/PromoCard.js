@@ -2,11 +2,9 @@ import { useEffect, useState } from 'react'
 import { useOrientation } from '../../hooks/useOrientation'
 import style from './landing.module.css'
 
-export const PromoCard = ({title, src, text, queue, length}) => {
+export const PromoCard = ({title, src, text, queue, length, abort}) => {
     const [flip, setFlip] = useState(false)
-    const [abort, setAbort] = useState(false)
     const orientation = useOrientation()
-
     useEffect(()=>{
         if(!abort){
             if(orientation==='landscape'){
@@ -26,9 +24,9 @@ export const PromoCard = ({title, src, text, queue, length}) => {
                 return ()=> clearTimeout(turn)
             }
         }
-    },[queue])
+    },[queue, abort])
     return (
-        <div className={style.cardContainer} onMouseEnter={()=>{setAbort(true)}}>
+        <div className={style.cardContainer}>
             <div className={`${style.promoCard} ${flip ? style.flipped : ''}`}>
                 <div className={style.cardFront}>
                     <img src={src} alt={`${title} icon`} />
