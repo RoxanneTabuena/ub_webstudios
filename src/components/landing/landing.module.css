@@ -41,7 +41,7 @@
 
 .promoCard{
     position: relative;
-    transition: transform 0.6s;
+    transition: transform 0.9s;
     transform-style: preserve-3d;
 }
 .cardFront, .cardBack, .promoCard{

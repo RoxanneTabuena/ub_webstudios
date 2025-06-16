@@ -16,7 +16,7 @@ export const PromoCard = ({title, src, text, queue, length, abort}) => {
         perspective: `${cardWidth*1.2}px`,
         width: `${cardWidth}px`,
         height: `${cardWidth*8/7}px`,
-        margin: `${width*.01}px`,
+        margin: `${width*.03}px`,
         zIndex: `0px`
     }
 
