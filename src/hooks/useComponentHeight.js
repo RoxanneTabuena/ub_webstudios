@@ -19,7 +19,6 @@ export const useComponentHeight = () => {
     }
 
   }, []);
-  console.log(height)
 
   return [ref, height]
 }

@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react'
 import { useOrientation } from '../../hooks/useOrientation'
 import { useWindowDimensions } from '../../hooks/useWindowDimensions'
+import { useIsVisible } from '../../hooks/useIsVisible'
 import style from './landing.module.css'
 
 export const PromoCard = ({title, src, text, queue, length, abort}) => {
     const [flip, setFlip] = useState(false)
     const orientation = useOrientation()
     const {width} = useWindowDimensions()
+    const [ cardRef, visible ] = useIsVisible({options : {
+        threshold: 1
+    }})
     const cardWidth = orientation === 'landscape' ? Math.floor([width*.9]/3): width*.75
     const cardStyle = {
         perspective: `${cardWidth*1.2}px`,
@@ -29,16 +33,17 @@ export const PromoCard = ({title, src, text, queue, length, abort}) => {
                 return () => clearTimeout(turn_1)
             }
             else{
-                const turn = setTimeout(()=>{
+                if(!visible){
+                    setFlip(false)
+                }else{
                     setFlip(true)
-                }, 1200)
-                return ()=> clearTimeout(turn)
+                }
             }
         }
-    },[queue, abort])
+    },[queue, abort, visible])
 
     return (
-        <div className={style.cardContainer} style={cardStyle}>
+        <div ref={cardRef} className={style.cardContainer} style={cardStyle}>
             <div className={`${style.promoCard} ${flip ? style.flipped : ''}`}>
                 <div className={style.cardFront}>
                     <img src={src} alt={`${title} icon`} />
