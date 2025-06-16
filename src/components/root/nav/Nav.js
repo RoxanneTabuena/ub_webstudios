@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom"
 import { NavLink } from "react-router-dom"
 import { MenuIcon } from "./MenuIcon"
 import style from '../nav/nav.module.css'
-export const Nav = () => {
+export const Nav = ({iconHeight}) => {
     const orientation= useOrientation()
     const [open, setOpen] = useState(false)
     const {pathname} = useLocation()
@@ -33,14 +33,15 @@ export const Nav = () => {
     const expand = (
         <div className={style.menu}>
             <div className={style.mobMenu}>
-                {nav}
+                <div>{nav.slice(0,2)}</div>
+                <div>{nav.slice(2,4)}</div>
             </div>
 
-            <MenuIcon open={true} handleMenuToggle={handleMenuToggle}/>
+            <MenuIcon open={true} handleMenuToggle={handleMenuToggle} iconHeight={iconHeight}/>
         </div>
     )
     const contract = (
-        <MenuIcon open={false} handleMenuToggle={handleMenuToggle}/>
+        <MenuIcon open={false} handleMenuToggle={handleMenuToggle} iconHeight={iconHeight}/>
     )
     if(orientation === 'landscape'){
         return(

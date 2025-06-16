@@ -2,6 +2,9 @@
 nav{
     display: flex;
     width: fit-content;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
 }
 .menu{
     display: flex;
@@ -10,25 +13,24 @@ nav{
 
 .menuLink{
     background-color: black;
-    padding: 10px;
-    border-radius: 10px;
+}
+
+/* general icon */
+.icon{
+    background-color: black;
+    border-radius: 5px;
 }
 
 /* responsive mobile */
 @media only screen and (max-width: 480px) {
     /* mobile typography */
     .menu>div>a>h3{
-        font-size: 24px;
+        font-size: 23px;
     }
     
     /* mobile nav */
     nav{
-        max-width: 65%;
         justify-content: flex-end;
-    }
-
-    .icon{
-        max-width: 20%;
     }
 
     .mobMenu {
@@ -36,6 +38,12 @@ nav{
         flex-wrap: wrap;
         justify-content: space-between;
     }
+
+    .menuLink{
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+}
 }
 /* responsive desktop */
 @media only screen and (min-width: 481px) {
@@ -50,4 +58,10 @@ nav{
         justify-content: space-between;
         width: 75%;
     }
+
+    .menuLink{
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
 }

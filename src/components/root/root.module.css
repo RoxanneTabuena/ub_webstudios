@@ -6,6 +6,7 @@ body {
 /* general layout */
 header{
     position: fixed;
+    z-index: 90;
 }
 main{
     height: 100vh;
@@ -54,8 +55,9 @@ header{
     display: flex;
     justify-content: space-between;
     height: fit-content;
-    align-items: center;
+    align-items: flex-start;
     font-family: 'Rare';
+    width:100%;
 }
 
 header>a{
@@ -64,8 +66,10 @@ header>a{
 
 
 
-.black{
+.logo{
     background-color: black;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 /* responsive mobile */
@@ -74,17 +78,11 @@ header>a{
     body{
         padding: 3px;
     }
-    header>a{
-        max-width: 33%;
-    }
 }
 /* responsive desktop */
 @media only screen and (min-width: 481px) {
     /* desktop header & footer */
     body{
         padding: 3px;
-    }
-    header>a{
-        max-width: 20%;
     }
 }

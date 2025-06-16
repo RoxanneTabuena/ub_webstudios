@@ -1,28 +1,31 @@
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useOrientation } from '../../hooks/useOrientation'
 import { Nav } from './nav/Nav'
 import logo from '../../assets/img/Logo_white 2.png'
 import style from './root.module.css'
 export const Header = ({headerRef, logoRatio}) => {
+    const orientation = useOrientation()
     // control display style
     const [display, setDisplay] = useState('full')
     // control logo sizing
     const [limit, setLimit] = useState(null)
-    const [width, setWidth] = useState('100%')
+    const maxIcon = orientation === 'landscape' ? 125 : 69
+    const [height, setHeight] = useState(`${maxIcon}px`)
     // shrink display on scroll, grow display as top of page approaches
     useEffect(()=>{
         if(!limit){
             setLimit(logoRatio)
         }
-        const computeWidth =()=>{
+        const computeHeight =()=>{
             if(logoRatio<0){
-                return '65%'
+                return `${.45* maxIcon}px`
             }
-            return `${65+([35*logoRatio]/limit)}%`
+            return `${[45+([35*logoRatio]/limit)]/100*maxIcon}px`
         }
         if(logoRatio<limit){
             setDisplay('mini')
-            setWidth(computeWidth())
+            setHeight(computeHeight())
         }else{
             setDisplay('full')
         }
@@ -30,35 +33,37 @@ export const Header = ({headerRef, logoRatio}) => {
     const full = (
         <header ref={headerRef}
         >
-            <NavLink to="/">            
+            <NavLink to="/" className={style.logo}>            
                 <img 
-                    className={style.black}
                     src={logo} 
                     alt="unbound studio logo"
                     style={{
-                        width: '100%'
+                        height: `${maxIcon}px`,
+                        aspectRatio: '1.7'
                     }}
                     ></img>
-                <h3>Web Studio</h3>
+                <h3
+                    style={{
+                        fontSize: `${maxIcon/3.5}px`
+                    }}
+                >Web Studio</h3>
             </NavLink>
-            <Nav className={style.black}
-            
-            />
+            <Nav iconHeight={`${maxIcon}px`}/>
         </header>
     )
     const mini = (
         <header ref={headerRef}>
-            <NavLink to="/">            
+            <NavLink to="/" className={style.logo}>            
                 <img 
-                    className={style.black}
                     src={logo} 
                     alt="unbound studio logo"
                     style={{
-                        width: width
+                        height: height,
+                        minWidth: height
                     }}
                 ></img>
             </NavLink>
-            <Nav className={style.black}/>
+            <Nav iconHeight={height}/>
         </header>
     )
     return (
