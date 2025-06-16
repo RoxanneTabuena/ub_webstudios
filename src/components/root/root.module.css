@@ -11,6 +11,8 @@ header{
 main{
     height: 100vh;
     overflow-y: scroll;
+    z-index: 25;
+    position: relative;
 }
 footer {
     position: fixed;
@@ -37,6 +39,7 @@ main{
     position: fixed;
     right: 0;
     width: fit-content;
+    z-index: 10;
 }
 
 .scroller >p {

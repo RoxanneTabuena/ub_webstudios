@@ -3,7 +3,6 @@ import closeIcon from '../../../assets/img/Close_Icon.png'
 import style from './nav.module.css'
 
 export const MenuIcon = ({open, handleMenuToggle, iconHeight}) => {
-    console.log(iconHeight)
     const menu = 
         <img src={openIcon} alt="menu icon"
         style={{
