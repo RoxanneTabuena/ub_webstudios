@@ -1,16 +1,25 @@
-import { useEffect, useState, useRef } from 'react';
+import { useLayoutEffect, useState, useRef } from 'react';
 
 export const useComponentHeight = () => {
   const ref = useRef(null)
   const [height, setHeight] = useState(0);
 
-  useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect()
-      setHeight(rect.height)
+  useLayoutEffect(() => {
+    if (ref.current){
+      const observer = new ResizeObserver(([entry]) => {
+        if (entry.contentRect) {
+          setHeight(entry.contentRect.height);
+        }
+      });
+  
+      observer.observe(ref.current);
+  
+      // Cleanup observer on unmount
+      return () => observer.disconnect();
     }
-  }, []);
 
+  }, []);
+  console.log(height)
 
   return [ref, height]
 }
