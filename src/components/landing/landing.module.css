@@ -57,13 +57,22 @@
     backface-visibility: hidden;
     border-radius: 15px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .cardFront{
     background-color: chartreuse;
+    font-family: 'Rare';
+    text-align: center;
 }
 .cardBack{
     background-color: blueviolet;
-        transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.cardBack>h3{
+    font-family: 'Titles';
 }
 
 /* mobile specifics*/
@@ -75,11 +84,17 @@
     .banner>p{
         max-width: 90%;
     }
+    .cardContainer{
+        pointer-events: none;
+    }
     /* mobile typography */
     h2{
         font-size: 33px;
     }
-
+    .cardBack>h3{
+        font-family: 'Titles';
+        font-size: 33px;
+    }
 
 }
 /* desktop specifics */

@@ -6,6 +6,9 @@ import style from './landing.module.css'
 export const Promo = () => {
     const [abort, setAbort] = useState(false)
     const titleList = Object.keys(promo_info)
+    const handleAbort =()=>{
+        setAbort(true)
+    }
     const cards = titleList.map((title, i)=>{
         return <PromoCard 
                     title={title} 
@@ -15,10 +18,11 @@ export const Promo = () => {
                     queue={i+1}
                     length={titleList.length}
                     abort={abort}
+                    handleAbort={handleAbort}
                     />
     })
     return (
-        <div className={style.promo} onMouseEnter={()=>{setAbort(true)}}>
+        <div className={style.promo}>
             {cards}
         </div>
     )
