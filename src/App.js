@@ -34,6 +34,11 @@ createBrowserRouter( createRoutesFromElements(
           element={< Work/>}
           />
         <Route
+          path="/work/:filter"
+          index
+          element={< Work/>}
+          />
+        <Route
           path="/services"
           index
           element={<Services />}
