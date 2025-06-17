@@ -1,0 +1,45 @@
+/* general work */
+
+/* general filter*/
+.filter {
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Rare';
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+/* general tag */
+.tag{
+    margin: 5px;
+}
+
+/* general client */
+.expand, .contract{
+    height: 100%;
+    width: 100%;
+}
+
+/* responsive mobile */
+@media only screen and (max-width: 480px) {
+    /* mobile work */
+    .work{
+        width: 85%;
+        margin: auto;
+    }
+
+    /* mobile client */
+    .client{
+        height: 70vh;
+        margin: 15px auto;
+        position: relative;
+    }
+    .bottom{
+        position: absolute;
+        bottom: 0;
+    }
+}
+/* responsive desktop */
+@media only screen and (min-width: 481px) {
+ 
+}
