@@ -4,32 +4,33 @@ import { useOrientation } from '../../hooks/useOrientation'
 import { Nav } from './nav/Nav'
 import logo from '../../assets/img/Logo_white 2.png'
 import style from './root.module.css'
-export const Header = ({headerRef, logoRatio}) => {
+export const Header = ({headerRef, scrollY}) => {
     const orientation = useOrientation()
     // control display style
     const [display, setDisplay] = useState('full')
     // control logo sizing
-    const [limit, setLimit] = useState(null)
     const maxIcon = orientation === 'landscape' ? 125 : 69
+    const minIcon = orientation === 'landscape' ? 69 : 33
     const [height, setHeight] = useState(`${maxIcon}px`)
     // shrink display on scroll, grow display as top of page approaches
     useEffect(()=>{
-        if(!limit){
-            setLimit(logoRatio)
+        const computeHeight = () => {
+            return `${maxIcon-[[minIcon*scrollY]/maxIcon]}px`
         }
-        const computeHeight =()=>{
-            if(logoRatio<0){
-                return `${.45* maxIcon}px`
-            }
-            return `${[45+([35*logoRatio]/limit)]/100*maxIcon}px`
-        }
-        if(logoRatio<limit){
-            setDisplay('mini')
-            setHeight(computeHeight())
-        }else{
+        if(scrollY===0 && display !=='full'){
             setDisplay('full')
+            setHeight(`${maxIcon}px`)
+        }else if(scrollY > 0 && scrollY<maxIcon){
+            if(display !== 'mid'){
+            setDisplay('mid')
+            }
+            setHeight(computeHeight())
+        }else if(scrollY>= maxIcon && display !== 'mini'){
+            setDisplay('mini')
+            setHeight(`${minIcon}px`)
         }
-    }, [logoRatio, limit])
+        console.log(scrollY, height)
+    }, [scrollY])
     const full = (
         <header ref={headerRef}
         >
@@ -38,7 +39,7 @@ export const Header = ({headerRef, logoRatio}) => {
                     src={logo} 
                     alt="unbound studio logo"
                     style={{
-                        height: `${maxIcon}px`,
+                        height: height,
                         aspectRatio: '1.7'
                     }}
                     ></img>
@@ -48,7 +49,7 @@ export const Header = ({headerRef, logoRatio}) => {
                     }}
                 >Web Studio</h3>
             </NavLink>
-            <Nav iconHeight={`${maxIcon}px`}/>
+            <Nav iconHeight={height}/>
         </header>
     )
     const mini = (
@@ -59,6 +60,7 @@ export const Header = ({headerRef, logoRatio}) => {
                     alt="unbound studio logo"
                     style={{
                         height: height,
+                        aspectRatio: '1.7',
                         minWidth: height
                     }}
                 ></img>

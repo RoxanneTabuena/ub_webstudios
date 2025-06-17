@@ -47,7 +47,7 @@ export const Root = () => {
                 handleWidthChange={handleWidthChange}
                 headerHeight={headerHeight}
                 />
-            <Header headerRef={headerRef} logoRatio={headerHeight-scrollTop}/>
+            <Header headerRef={headerRef} scrollY={scrollTop}/>
             <main 
                 ref={mainRef}
                 style={{
