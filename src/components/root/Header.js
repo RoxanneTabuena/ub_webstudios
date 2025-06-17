@@ -29,7 +29,6 @@ export const Header = ({headerRef, scrollY}) => {
             setDisplay('mini')
             setHeight(`${minIcon}px`)
         }
-        console.log(scrollY, height)
     }, [scrollY])
     const full = (
         <header ref={headerRef}
