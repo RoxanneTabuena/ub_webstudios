@@ -41,7 +41,7 @@ export const Root = () => {
             <ScrollToTop ref={mainRef}/>
             <Scroller 
                 text="UNBOUNDSTUDIO" 
-                color="rgba(255,255,255,.66)" 
+                color="rgb(255,255,255)" 
                 totalHeight={scrollHeight} 
                 position={scrollTop}
                 handleWidthChange={handleWidthChange}
