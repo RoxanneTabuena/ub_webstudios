@@ -15,11 +15,22 @@
 }
 
 /* general client */
+.client h3{
+    font-family: 'Titles';
+}
+
 .expand, .contract{
     height: 100%;
     width: 100%;
 }
-
+.side{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.center{
+    text-align: center;
+}
 /* responsive mobile */
 @media only screen and (max-width: 480px) {
     /* mobile work */
@@ -42,10 +53,10 @@
         position: absolute;
         top:0;
     }
-    .contract>.demo{
-        width: 90%;
+    .contract .demo{
+        width: 100%;
     }
-    .expand>.demo{
+    .expand .demo{
         width: 50%;
     }
 }

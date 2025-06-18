@@ -27,6 +27,7 @@ export const Work = () => {
         return list.map((client)=>{
             return <Client 
                         title={client}
+                        key={client}
                         info={client_info[client]}
                         featured = {feature===client? true : false}
                         handleSwitch={handleSwitch}
@@ -36,7 +37,7 @@ export const Work = () => {
     return (
         <div className={style.work}>
             <div className={style.filter}>
-                <h3>filter:</h3>
+                <h3>site types:</h3>
                 {Array.from(tagsList).map((tag)=>{
                     return <Tag 
                             key={tag}
