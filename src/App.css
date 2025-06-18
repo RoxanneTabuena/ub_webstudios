@@ -88,7 +88,7 @@ textarea:not([rows]) {
 /* general typography */
 @font-face {
   font-family: 'Titles';
-  src: url('./assets/fonts/Kanbe-1j61B.ttf');
+  src: url('./assets/fonts/Kanbe-Regular.ttf');
 }
 
 @font-face {
