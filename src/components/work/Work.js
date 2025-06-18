@@ -27,13 +27,7 @@ export const Work = () => {
         return list.map((client)=>{
             return <Client 
                         title={client}
-                        tags={client_info[client].tags}
-                        description={client_info[client].description}
-                        site={client_info[client].site}
-                        logo={client_info[client].logo}
-                        key={client}
-                        color={client_info[client].color}
-                        demo={client_info[client].demo}
+                        info={client_info[client]}
                         featured = {feature===client? true : false}
                         handleSwitch={handleSwitch}
                     />

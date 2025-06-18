@@ -1,48 +1,44 @@
 import { useIsVisible } from '../../hooks/useIsVisible'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import style from './work.module.css'
 export const Client = ({
         title,
-        description,
-        tags,
-        site,
-        logo,
-        color,
-        demo,
+        info,
         featured,
         handleSwitch
     }) => {
-    const [bottomRef, visible] = useIsVisible({options:{
+    const {tags, description, site, logo, demo, demoAlt, color} = info
+    const [bottomRef, bVisible] = useIsVisible({options:{
+        threshold: 1
+    }})
+    const [topRef, tVisible] = useIsVisible({options:{
         threshold: 1
     }})
     useEffect(()=>{
-        if(visible){
+        if(bVisible && tVisible){
             handleSwitch(title)
+        }else if(featured){
+            handleSwitch(null)
         }
-    },[visible])
-    useEffect(()=>{
-        if(featured){
-
-            console.log(title)
-        }
-    },[featured])
+    },[bVisible, tVisible, featured])
     const expand = (
-        <div
-            className={style.expand}
-             style={{
-                backgroundColor: color
-            }}
-        >
-            <p>{title}</p>
+        <div className={style.expand}>
+            <img className={style.demo} src={demo} alt={demoAlt}></img>
+            <h3>{title}</h3>
             {/* title, img, tags, description, visit */}
         </div>)
     const contract = (
         <div className={style.contract}>
-            {/* demo, title */}
+            {/* demo, title, tags */}
+            <img className={style.demo} src={demo} alt={demoAlt}></img>
+            <h3>{title}</h3>
         </div>)
     return (
-        <div className={style.client}>
-            {!featured? contract : expand}
+        <div className={style.client}
+        style={{color: color}}
+        >
+            <span ref={topRef} className={style.top}></span>
+            {}
             <span ref={bottomRef} className={style.bottom}></span>
         </div>
     )

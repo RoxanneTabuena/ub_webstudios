@@ -30,13 +30,23 @@
 
     /* mobile client */
     .client{
-        height: 70vh;
+        height: 55vh;
         margin: 15px auto;
         position: relative;
     }
     .bottom{
         position: absolute;
         bottom: 0;
+    }
+    .top{
+        position: absolute;
+        top:0;
+    }
+    .contract>.demo{
+        width: 90%;
+    }
+    .expand>.demo{
+        width: 50%;
     }
 }
 /* responsive desktop */

@@ -1,5 +1,5 @@
 export const client_info = {
-    "strata": {
+    "Strata Design Studio": {
         tags: [
             'service brochure', 
             'small business', 
@@ -7,22 +7,10 @@ export const client_info = {
         ],
         description: '',
         site: '',
-        logo: '',
-        demo: '',
+        logo: 'https://imagehostclub.s3.us-west-1.amazonaws.com/logos/Strata_LOGO.png',
+        demo: 'https://imagehostclub.s3.us-west-1.amazonaws.com/demos/strata.png',
+        demoAlt: 'roof of winchester mystery house',
         color: 'white'
-    },
-    "rhema": {
-        tags: [
-            'service brochure',
-            'small business',
-            'inventory',
-            'rental'
-        ],
-        description: '',
-        site: '',
-        logo: '',
-        demo: '',
-        color: 'blueviolet'
     },
     "hope flikr": {
         tags: [
@@ -32,8 +20,9 @@ export const client_info = {
         ],
         description: '',
         site: '',
-        logo: '',
-        demo: '',
+        logo: 'https://imagehostclub.s3.us-west-1.amazonaws.com/logos/huelum_LOGO.png',
+        demo: 'https://imagehostclub.s3.us-west-1.amazonaws.com/demos/huelum.png',
+        demoAlt: 'hue lum signature block lamp',
         color:'orange'
     },
 }
