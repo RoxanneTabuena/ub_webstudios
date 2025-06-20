@@ -1,5 +1,3 @@
-/* general work */
-
 /* general filter*/
 .filter {
     display: flex;
@@ -7,11 +5,6 @@
     font-family: 'Rare';
     flex-wrap: wrap;
     align-items: baseline;
-}
-
-/* general tag */
-.tag{
-    margin: 5px;
 }
 
 /* general client */
@@ -22,6 +15,12 @@
     font-family: 'Titles';
 }
 
+.read, .cover{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+/* general basic info */
 .title{
     display: flex;
     justify-content: space-between;
@@ -32,25 +31,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    align-items: baseline;
 }
-
-.expand, .content{
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
-
-.demo, .background{
-    width: 100%;
-}
-/* blur background and normalize inner content */
+/* general read mode background */
 .background{
     position: absolute;
     top: 0;
     left: 0;
-    filter: blur(5px) saturate(90%);
+    filter: blur(3px) saturate(90%);
     z-index: 10;
 }
+/* general content */
 .content *{
     position: relative;
     z-index: 30;
@@ -59,19 +50,27 @@
 .content{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
+    aspect-ratio: 1;
 }
 
-.visit *{
-    max-height: 50%;
-}
-.visit *{
-    margin: auto;
+.visit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    aspect-ratio: 1;
+    border-radius: 15px;
+    font-family: 'Rare';
     text-align: center;
 }
 
+.logo{
+    max-height: 60%;
+    aspect-ratio: 1 auto;
+}
 
 /* responsive mobile */
 @media only screen and (max-width: 480px) {
@@ -81,13 +80,15 @@
         margin: auto;
     }
 
-    /* mobile client */
+    /* mobile basic */
     .client h3{
         font-size: 21px;
     }
     .tags *{
         font-size: 15px;
+        margin: 1px 3px;
     }
+    /* mobile client */
     .client{
         height: 55vh;
         margin: 15px auto;
