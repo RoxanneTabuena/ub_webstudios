@@ -5,8 +5,9 @@ export const client_info = {
             'small business', 
             'portfolio'
         ],
-        description: '',
-        site: '',
+        description: 'Strata design studio is an independent historical architectural firm based in San Jose, California',
+        services: ['web design', 'web development', 'portfolio creation', 'service linking', 'custom graphics', 'contact form'],
+        site: 'https://dreamers-only.com',
         logo: 'https://imagehostclub.s3.us-west-1.amazonaws.com/logos/Strata_LOGO_White.png',
         demo: 'https://imagehostclub.s3.us-west-1.amazonaws.com/demos/strata.png',
         demoAlt: 'roof of winchester mystery house',
@@ -20,6 +21,7 @@ export const client_info = {
             'shopify'
         ],
         description: '',
+        services: [],
         site: '',
         logo: 'https://imagehostclub.s3.us-west-1.amazonaws.com/logos/huelum_LOGO.png',
         demo: 'https://imagehostclub.s3.us-west-1.amazonaws.com/demos/lamp_demo.png',

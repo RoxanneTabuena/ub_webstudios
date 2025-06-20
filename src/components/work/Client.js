@@ -1,5 +1,6 @@
 import { useIsVisible } from '../../hooks/useIsVisible'
 import { useEffect, useState } from 'react'
+import { NavButton } from '../../blocks/NavButton'
 import style from './work.module.css'
 export const Client = ({title,info,featured,handleSwitch}) => {
     const {
@@ -12,7 +13,8 @@ export const Client = ({title,info,featured,handleSwitch}) => {
         featureDemoAlt, 
         demo, 
         demoAlt, 
-        color} = info
+        color,
+        services} = info
     const [bottomRef, bVisible] = useIsVisible({options:{
         threshold: 1
     }})
@@ -23,23 +25,54 @@ export const Client = ({title,info,featured,handleSwitch}) => {
     useEffect(()=>{
         if(bVisible && tVisible){
             handleSwitch(title)
-            console.log('switch ', title)
         }else if(featured){
             handleSwitch(null)
         }
     },[bVisible, tVisible, featured])
+    const basic = (<div>
+            <div className={style.title}>
+                <h3>{title}</h3>
+                <h3>{launch}</h3>
+            </div>
+            <div className={style.tags}>
+                {tags.map((tag, i)=>{
+                    return <NavButton 
+                    key={tag} 
+                    fontSize="mini" 
+                    path={`/work/${tag}`} 
+                    text={`${tag}${i===tags.length-1 ? '' : ','}`} 
+                    textColor={color} 
+                    backgroundColor="transparent"
+                    font='Titles'
+                    />
+                })}
+            </div>
+    </div>)
     const expand = (
         <div className={style.expand}>
-            <div className={style.side}>
-                <img className={style.demo} src={demo} alt={demoAlt}></img>
-                <div className={style.center}>
-                    <a href={site}> 
-                        <img src={logo} alt={`${title} logo`}></img>
-                    </a>
-                    <p>{`visit ${title} site`}</p>
+            <img className={style.background} src={demo} alt={demoAlt}></img>
+            <div className={style.content}>
+                <a href={site} className={style.visit}>
+
+                    <img src={logo} alt={`${title} logo`}></img>
+                    <p>visit site</p>
+                </a>
+                <p>{description}</p>
+                <div className={style.tags}>
+                    <p>services provided:</p>
+                    {services.map((tag, i)=>{
+                        return <NavButton 
+                        key={tag} 
+                        fontSize="mini" 
+                        path={`/work/${tag}`} 
+                        text={`${tag}${i===tags.length-1 ? '' : ','}`} 
+                        textColor={color} 
+                        backgroundColor="transparent"
+                        />
+                    })}
                 </div>
+                {basic}
             </div>
-            <h3>{title}</h3>
             {/* title, img, tags, description, visit */}
         </div>)
     const contract = (
@@ -50,10 +83,7 @@ export const Client = ({title,info,featured,handleSwitch}) => {
                 :
                 <img className={style.demo} src={demo} alt={demoAlt}></img>
             }
-            <div className={style.side}>
-                <h3>{title}</h3>
-                <h3>{launch}</h3>
-            </div>
+            {basic}
         </div>)
     return (
         <div 
