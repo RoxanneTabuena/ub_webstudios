@@ -31,8 +31,7 @@ export const Header = ({headerRef, scrollY}) => {
         }
     }, [scrollY])
     const full = (
-        <header ref={headerRef}
-        >
+            <header ref={headerRef}>
             <NavLink to="/" className={style.logo}>            
                 <img 
                     src={logo} 
@@ -52,7 +51,7 @@ export const Header = ({headerRef, scrollY}) => {
         </header>
     )
     const mini = (
-        <header ref={headerRef}>
+        <header>
             <NavLink to="/" className={style.logo}>            
                 <img 
                     src={logo} 
