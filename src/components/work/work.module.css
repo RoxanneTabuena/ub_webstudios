@@ -1,10 +1,18 @@
 /* general filter*/
-.filter {
+.filter div {
     display: flex;
     justify-content: flex-start;
     font-family: 'Rare';
     flex-wrap: wrap;
     align-items: baseline;
+}
+
+.filter button {
+    background-color: white;
+    font-family: 'Rare';
+    color: black;
+    padding: 2px;
+    border-radius: 5px;
 }
 
 /* general client */

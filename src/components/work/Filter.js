@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { client_info } from './work.content'
 import { NavButton } from '../../blocks/NavButton'
 import style from './work.module.css'
@@ -21,16 +21,23 @@ export const Filter= () => {
         // }
     })
     return (
-        <div>
-            <div className={style.filter}>
-                <h3>site types:</h3>
+        <div className={style.filter}>
+            {open? 
                 <div>
-                    {Array.from(tagsList).map((tag)=>{
-                        return <NavButton key={tag} path={`/work/${tag}`} text={tag} size={"small"} backgroundColor={"white"}/>
+                    <h3 onClick={()=>setOpen(false)}>project types:</h3>
+                        {Array.from(tagsList).map((tag, i)=>{
+                            return (<p key={tag}>
+                            <NavButton path={`/work/${tag}`} text={tag} size={"small"} backgroundColor={"white"}/>
+                            {i !== tagsList.size-1 && ","}
+                                </p>)
 
-                    })}
+                        })}
                 </div>
-            </div>
+                :
+                <button onClick={()=>setOpen(true)}>
+                    filter projects
+                </button>
+            }
         </div>
     )
 }
