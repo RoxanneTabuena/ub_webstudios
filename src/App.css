@@ -92,6 +92,11 @@ textarea:not([rows]) {
 }
 
 @font-face {
+  font-family: 'TitlesBold';
+  src: url('./assets/fonts/Kanbe-Bold.ttf');
+}
+
+@font-face {
   font-family: 'Rare';
   src: url('./assets/fonts/MinisimRegular-drJmE.ttf');
 }
