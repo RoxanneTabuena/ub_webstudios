@@ -7,7 +7,7 @@ export const NavButton = ({path, text, textColor, backgroundColor, size, fontSiz
             <NavLink to={path}>
                 <button style={{
                     backgroundColor: backgroundColor
-                }} className={`${style.navButton} ${sizeStyle}`}>
+                }} className={` ${sizeStyle} ${style.navButton}`}>
                     <h4 style={{
                         color: textColor,
                         fontSize: `${fontSize && fontSize}`,
