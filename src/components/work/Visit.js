@@ -10,7 +10,7 @@ export const Visit = ({site, color, logo, title}) => {
                 >
 
                     <img className={style.logo} src={logo} alt={`${title} logo`}></img>
-                    <p>view site</p>
+                    <p>visit</p>
             </a>
     )
 }
