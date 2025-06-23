@@ -6,16 +6,16 @@ import style from '../nav/nav.module.css'
 export const Nav = ({iconHeight, handleMenuToggle, open}) => {
     const orientation= useOrientation()
     const nav = [
-        <NavLink to="/about">
+        <NavLink to="/about" key={"about"}>
             <h3 className={style.menuLink}>About</h3>
         </NavLink>,
-        <NavLink to="/pricing">
+        <NavLink to="/pricing" key={"pricing"}>
             <h3 className={style.menuLink}>Pricing</h3>
         </NavLink>,
-        <NavLink to="/services">
+        <NavLink to="/services" key={"services"}>
             <h3 className={style.menuLink}>Services</h3>
         </NavLink>,
-        <NavLink to="/work">
+        <NavLink to="/work" key={"work"}>
             <h3 className={style.menuLink}>Work</h3>
         </NavLink>
     ]
@@ -26,11 +26,11 @@ export const Nav = ({iconHeight, handleMenuToggle, open}) => {
                 <div>{nav.slice(2,4)}</div>
             </div>
 
-            <MenuIcon open={true} handleMenuToggle={handleMenuToggle} iconHeight={iconHeight}/>
+            <MenuIcon open={open} iconHeight={iconHeight} handleMenuToggle={handleMenuToggle}/>
         </div>
     )
     const contract = (
-        <MenuIcon open={false} handleMenuToggle={handleMenuToggle} iconHeight={iconHeight}/>
+        <MenuIcon open={open} iconHeight={iconHeight} handleMenuToggle={handleMenuToggle}/>
     )
     if(orientation === 'landscape'){
         return(
@@ -40,7 +40,7 @@ export const Nav = ({iconHeight, handleMenuToggle, open}) => {
         )
     }
     return (
-        <nav>
+        <nav onClick={handleMenuToggle}>
             {open === true ? expand : contract} 
         </nav>
     )
