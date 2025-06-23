@@ -23,6 +23,9 @@ export const Header = ({headerRef, scrollY}) => {
     const handleMenuToggle= () => {
         setOpen(!open)
     }
+    useEffect(()=>{
+        console.log(`open = ${open}`)
+    },[open])
     // shrink display on scroll, grow display as top of page approaches
     useEffect(()=>{
         const computeHeight = () => {
@@ -41,7 +44,6 @@ export const Header = ({headerRef, scrollY}) => {
             setHeight(minIcon)
         }
     }, [scrollY])
-    useEffect(()=>{},[open])
     const full = (
             <header ref={headerRef}>
             <NavLink to="/" className={style.logo}>            
