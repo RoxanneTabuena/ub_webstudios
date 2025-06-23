@@ -81,7 +81,7 @@ header>a{
     margin-right: 10px;
 }
 
-.logo, .title{
+.logo, .title, .fullTitle{
     background-color: black;
     border-radius: 5px;
 }
@@ -91,6 +91,11 @@ header>a{
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
+}
+
+.fullTitle{
+    display: flex;
+
 }
 
 /* general page info */

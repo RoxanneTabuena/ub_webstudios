@@ -44,22 +44,24 @@ export const Header = ({headerRef, scrollY}) => {
     }, [scrollY])
     const full = (
             <header ref={headerRef} className={style.full}>
-            <NavLink to="/" className={style.logo}>            
-                <img 
-                    src={logo} 
-                    alt="unbound studio logo"
-                    style={{
-                        height: height,
-                        aspectRatio: '1.7'
-                    }}
-                    ></img>
-                <h3
-                    style={{
-                        fontSize: `${maxIcon/3.5}px`
-                    }}
-                >Web Studio</h3>
-            </NavLink>
-            {!open && <PageInfo height={height} marginTop={false}/>}
+                <div className={style.fullTitle}>
+                <NavLink to="/" className={style.logo}>            
+                    <img 
+                        src={logo} 
+                        alt="unbound studio logo"
+                        style={{
+                            height: height,
+                            aspectRatio: '1.7'
+                        }}
+                        ></img>
+                    <h3
+                        style={{
+                            fontSize: `${maxIcon/3.5}px`
+                        }}
+                    >Web Studio</h3>
+                </NavLink>
+                {!open && <PageInfo height={height}/>}
+            </div>
             <Nav iconHeight={height} open={open} handleMenuToggle={handleMenuToggle}/>
         </header>
     )
@@ -77,7 +79,7 @@ export const Header = ({headerRef, scrollY}) => {
                         }}
                     ></img>
                 </NavLink>
-                {!open && <PageInfo height={height} marginTop={true}/>}
+                {!open && <PageInfo height={height}/>}
             </div>
             <Nav iconHeight={height} handleMenuToggle={handleMenuToggle} open={open}/>
         </header>
