@@ -1,4 +1,14 @@
+/* general work */
+.work{
+    position: relative;
+}
+
 /* general filter*/
+.filter{
+    position: fixed;
+    z-index: 90;
+}
+
 .filter div {
     display: flex;
     justify-content: flex-start;
@@ -13,6 +23,11 @@
     color: black;
     padding: 2px;
     border-radius: 5px;
+}
+
+/* general clients */
+.clients{
+    position: relative;
 }
 
 /* general client */
@@ -83,7 +98,7 @@
 /* responsive mobile */
 @media only screen and (max-width: 480px) {
     /* mobile work */
-    .work{
+    .clients{
         width: 85%;
         margin: auto;
     }
