@@ -14,19 +14,25 @@ export const Filter= ({handleFilterChange}) => {
     const [open, setOpen] = useState()
     // list current filters
     const path = pathname.split('/').slice(2)
-    const determinePath = (tag) => {
+    const addTagToPath = (tag) => {
        if(!path.length){
         return tag
        }else{
         return `/work/${path}&&${tag}`
        }
     }
+    // manage filters
+    const filters = path.length? path[0].split('&&').map(tag=>{
+        return tag.replace('%20', ' ')
+    }) : path
     // generate filter list
     const clientNames = Object.keys(client_info)
     let tagsList = new Set()
     clientNames.forEach((name)=>{
         client_info[name].tags.forEach(tag=>{
-            tagsList.add(tag)
+            if(!filters.includes(tag)){
+                tagsList.add(tag)
+            }
         })
         // LOGIC FOR ADDING FEATURE FILTERS
         // if(client_info[name].inDepth){
@@ -35,6 +41,14 @@ export const Filter= ({handleFilterChange}) => {
         //     })
         // }
     })
+    const removeTagFromPath = (tag) => {
+        if(filters.length>1){
+            let chunk = `&&${tag.replace(' ','%20')}`
+            let newPath = path[0].replace(chunk, '')
+            return `/work/${newPath}`
+        }
+        return `/work`
+        }
     const [ filterRef, filterHeight] = useComponentHeight()
     // update filter height for clients positioning
     useEffect(()=>{
@@ -42,12 +56,16 @@ export const Filter= ({handleFilterChange}) => {
     }, [filterHeight])
     return (
         <div className={style.filter} ref={filterRef} style={{top: headerHeight+10}}>
+            {filters.map((tag)=>{
+                    console.log(removeTagFromPath(tag))
+                    return <NavButton key={tag} path={removeTagFromPath(tag)} text={`X ${tag}`} size="small" backgroundColor={"fuchsia"}/>
+                })}
             {open? 
                 <div>
                     <h3 onClick={()=>setOpen(false)}>project types:</h3>
                         {Array.from(tagsList).map((tag, i)=>{
                             return (<p key={tag}>
-                            <NavButton path={determinePath(tag)} text={tag} size={"small"} backgroundColor={"white"}/>
+                            <NavButton path={addTagToPath(tag)} text={tag} size={"small"} backgroundColor={"white"}/>
                             {i !== tagsList.size-1 && ","}
                                 </p>)
 
