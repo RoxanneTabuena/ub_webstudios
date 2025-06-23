@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom'
-import style from '../root.module.css'
+import style from './header.module.css'
 export const PageInfo = ({ height}) => {
     const {pathname} = useLocation()
     const title = pathname === '/' ? 'Welcome' : pathname.split('/')[1].toUpperCase()

@@ -1,0 +1,52 @@
+
+/* general header */
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    font-family: 'Rare';
+    width:100%;
+}
+.full{
+    align-items: flex-start;
+}
+.mini{
+    align-items: baseline;
+
+}
+header *{
+    font-family: 'Rare';
+
+}
+
+header>a{
+    text-align: center;
+}
+.logo{
+    margin-right: 10px;
+}
+
+.logo, .title, .fullTitle{
+    background-color: black;
+    border-radius: 5px;
+}
+
+.title{
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.fullTitle{
+    display: flex;
+
+}
+
+/* general page info */
+.pageInfo{
+    display: flex;
+    align-items: flex-end;
+}

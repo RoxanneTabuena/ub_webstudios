@@ -4,7 +4,7 @@ import { useOrientation } from '../../../hooks/useOrientation'
 import { Nav } from '../nav/Nav'
 import { PageInfo } from './PageInfo'
 import logo from '../../../assets/img/Logo_white 2.png'
-import style from '../root.module.css'
+import style from './header.module.css'
 export const Header = ({headerRef, scrollY}) => {
     const orientation = useOrientation()
     // control display style
