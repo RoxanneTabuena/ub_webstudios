@@ -1,21 +1,10 @@
 import { useOrientation } from "../../../hooks/useOrientation"
-import { useState, useEffect } from "react"
-import { useLocation } from "react-router-dom"
+import { useEffect } from "react"
 import { NavLink } from "react-router-dom"
 import { MenuIcon } from "./MenuIcon"
 import style from '../nav/nav.module.css'
-export const Nav = ({iconHeight}) => {
+export const Nav = ({iconHeight, handleMenuToggle, open}) => {
     const orientation= useOrientation()
-    const [open, setOpen] = useState(false)
-    const {pathname} = useLocation()
-    // close menu on path change
-    useEffect(()=>{
-        setOpen(false)
-    },[pathname])
-    // open and close menu on click
-    const handleMenuToggle= () => {
-        setOpen(!open)
-    }
     const nav = [
         <NavLink to="/about">
             <h3 className={style.menuLink}>About</h3>

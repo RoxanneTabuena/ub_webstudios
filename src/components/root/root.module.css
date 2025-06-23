@@ -63,17 +63,34 @@ header{
     font-family: 'Rare';
     width:100%;
 }
+header *{
+    font-family: 'Rare';
+
+}
 
 header>a{
     text-align: center;
 }
-
-
-
 .logo{
+    margin-right: 10px;
+}
+
+.logo, .title{
     background-color: black;
-    padding: 10px;
     border-radius: 5px;
+}
+
+.title{
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+/* general page info */
+.pageInfo{
+    display: flex;
+    align-items: flex-end;
 }
 
 /* responsive mobile */

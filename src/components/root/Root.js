@@ -4,7 +4,7 @@ import { useWindowDimensions } from '../../hooks/useWindowDimensions'
 import { useComponentHeight } from '../../hooks/useComponentHeight'
 import { ScrollToTop } from '../../hooks/ScrollToTop'
 import { Outlet } from 'react-router-dom'
-import { Header } from './Header'
+import { Header } from './header/Header'
 import { Footer } from './Footer'
 import { Scroller} from './Scroller'
 import style from "./root.module.css"
