@@ -1,5 +1,4 @@
 import { useOrientation } from "../../../hooks/useOrientation"
-import { useEffect } from "react"
 import { NavLink } from "react-router-dom"
 import { MenuIcon } from "./MenuIcon"
 import style from '../nav/nav.module.css'
@@ -21,7 +20,8 @@ export const Nav = ({iconHeight, handleMenuToggle, open}) => {
     ]
     const expand = (
         <div className={style.menu}>
-            <div className={style.mobMenu}>
+            <div className={style.mobMenu}
+             style={{right: iconHeight+10}}>
                 <div>{nav.slice(0,2)}</div>
                 <div>{nav.slice(2,4)}</div>
             </div>

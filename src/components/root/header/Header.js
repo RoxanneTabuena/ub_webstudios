@@ -23,9 +23,6 @@ export const Header = ({headerRef, scrollY}) => {
     const handleMenuToggle= () => {
         setOpen(!open)
     }
-    useEffect(()=>{
-        console.log(`open = ${open}`)
-    },[open])
     // shrink display on scroll, grow display as top of page approaches
     useEffect(()=>{
         const computeHeight = () => {
@@ -43,9 +40,10 @@ export const Header = ({headerRef, scrollY}) => {
             setDisplay('mini')
             setHeight(minIcon)
         }
+        setOpen(false)
     }, [scrollY])
     const full = (
-            <header ref={headerRef}>
+            <header ref={headerRef} className={style.full}>
             <NavLink to="/" className={style.logo}>            
                 <img 
                     src={logo} 
@@ -66,7 +64,7 @@ export const Header = ({headerRef, scrollY}) => {
         </header>
     )
     const mini = (
-        <header>
+        <header className={style.mini}>
             <div className={style.title}>
                 <NavLink to="/" className={style.logo}>            
                     <img 
@@ -81,7 +79,7 @@ export const Header = ({headerRef, scrollY}) => {
                 </NavLink>
                 {!open && <PageInfo height={height} marginTop={true}/>}
             </div>
-            <Nav iconHeight={height}/>
+            <Nav iconHeight={height} handleMenuToggle={handleMenuToggle} open={open}/>
         </header>
     )
     return (
