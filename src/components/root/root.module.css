@@ -32,7 +32,7 @@ main{
 .scrollEvents{
     position: fixed;
     right: 0;
-    z-index: 100;
+    z-index: 60;
     height: 100vh;
 }
 
@@ -59,9 +59,15 @@ header{
     display: flex;
     justify-content: space-between;
     height: fit-content;
-    align-items: flex-start;
     font-family: 'Rare';
     width:100%;
+}
+.full{
+    align-items: flex-start;
+}
+.mini{
+    align-items: baseline;
+
 }
 header *{
     font-family: 'Rare';
