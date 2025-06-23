@@ -53,7 +53,7 @@ export const Root = () => {
                 style={{
                     paddingTop: `${headerHeight}px`,
                     }}>
-                <Outlet/>
+                <Outlet context={headerHeight} />
             </main>
             <Footer />
         </div>
