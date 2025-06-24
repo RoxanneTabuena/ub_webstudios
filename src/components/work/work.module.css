@@ -61,7 +61,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    filter: blur(3px) saturate(80%);
+    filter: blur(3px) saturate(90%);
     z-index: 10;
 }
 /* general content */
