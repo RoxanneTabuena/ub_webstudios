@@ -4,7 +4,7 @@ import style from './nav.module.css'
 
 export const MenuIcon = ({open, iconHeight}) => {
     const menu = 
-        <img 
+        <img className={style.open}
             src={openIcon} alt="menu icon"
             style={{
                 height: iconHeight,
@@ -15,8 +15,8 @@ export const MenuIcon = ({open, iconHeight}) => {
         <img 
             src={closeIcon} alt="close icon" 
             style={{
-                height: iconHeight,
-                minWidth: iconHeight
+                height: iconHeight*.8,
+                minWidth: iconHeight*.8
             }}
         ></img>
     return (

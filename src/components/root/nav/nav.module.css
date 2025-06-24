@@ -3,15 +3,14 @@ nav{
     display: flex;
     width: fit-content;
     background-color: black;
-    padding: 10px;
     border-radius: 5px;
     z-index: 80;
     align-items: flex-end;
 }
 .menu{
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 
@@ -24,8 +23,8 @@ nav{
     background-color: black;
     border-radius: 5px;
     z-index: 80;
+    margin: 10px;
 }
-
 /* responsive mobile */
 @media only screen and (max-width: 480px) {
     /* mobile typography */
@@ -40,10 +39,7 @@ nav{
 
     .mobMenu {
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
-        position: absolute;
-        top: 0;
     }
 
     .menuLink{
