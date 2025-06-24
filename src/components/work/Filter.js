@@ -55,7 +55,7 @@ export const Filter= ({handleFilterChange, handleAddFilter, handleRemoveFilter, 
                 </div>
                 :
                 <button onClick={()=>setOpen(true)}>
-                    view all filters
+                    view filters
                 </button>
             }
         </div>
