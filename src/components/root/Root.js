@@ -31,7 +31,6 @@ export const Root = () => {
             top: ((e.clientY-headerHeight)*scrollHeight/(height))
         })
     }
-    console.log(pathname)
     return (
         <div className={style.root}>
             {pathname === '/book' ? 
