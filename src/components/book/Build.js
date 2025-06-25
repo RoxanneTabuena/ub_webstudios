@@ -1,11 +1,21 @@
+import { BuildItem } from './BuildItem'
 import style from './book.module.css'
-import { BuildCard } from './BuildCard'
 
-export const Build = ({build, cost, time}) => {
+export const Build = ({build, cost, time, handleUpdatePromo, handleRemoveBuild}) => {
+
     // toggle payment plan / lump sum
     return (
         <div className={style.build}>
-            <BuildCard build={build} cost={cost} time={time}/>
+            <h2>Build</h2>
+            {build.map((item)=>{
+            return <BuildItem 
+                        key={item} 
+                        item={item} 
+                        handleUpdatePromo={handleUpdatePromo}
+                        handleRemoveBuild={handleRemoveBuild}/>
+            })}
+            <p>{cost}</p>
+            <p>{time}</p>
         </div>
     )
 }
