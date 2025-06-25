@@ -1,20 +1,11 @@
 import style from './book.module.css'
-import { menu_info } from './book.content'
+import { BuildCard } from './BuildCard'
 
-export const Build = ({build}) => {
-    const calculateCost = (build) => {
-        return "build total"
-    }    
-    const estimateBuildTime = (build) => {
-        return "estimated build deadline"
-    }
+export const Build = ({build, cost, time}) => {
     // toggle payment plan / lump sum
     return (
         <div className={style.build}>
-            <h2>Build</h2>
-            <p>
-                cur build selections, est cost, est time
-            </p>
+            <BuildCard build={build} cost={cost} time={time}/>
         </div>
     )
 }
