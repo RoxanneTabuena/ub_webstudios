@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu } from './Menu'
 import { Promo } from './Promo'
 import { BuildContainer } from './BuildContainer'
@@ -26,6 +26,9 @@ export const Book = () => {
             return i !== item
         }))
     }
+    useEffect(()=>{
+        setPromo(build.at(-1))
+    }, [build])
     return (
         <div className={style.book}>
             <Promo page={promo}/>
