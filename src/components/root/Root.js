@@ -17,6 +17,8 @@ export const Root = () => {
     const {pathname} = useLocation()
     // header related variables
     const [headerRef, headerHeight] = useComponentHeight()
+    // controll scroll on
+    const [scrollOn, setScrollOn] = useState(true)
     // scroller related variables
     const mainRef = useRef(null)
     const {height, width} = useWindowDimensions()
@@ -31,6 +33,13 @@ export const Root = () => {
             top: ((e.clientY-headerHeight)*scrollHeight/(height))
         })
     }
+    // update scroller visibility on path change
+    useEffect(()=>{
+        let scrollingPaths = ['/work', '/about']
+        const scrolls = scrollingPaths.some((p)=>pathname.includes(p))
+        setScrollOn(scrolls)
+    },[pathname])
+    
     return (
         <div className={style.root}>
             {pathname === '/book' ? 
@@ -54,6 +63,7 @@ export const Root = () => {
                         position={scrollTop}
                         handleWidthChange={handleWidthChange}
                         headerHeight={headerHeight}
+                        on={scrollOn}
                         />
                     <Header headerRef={headerRef} scrollY={scrollTop}/>
                     <main 

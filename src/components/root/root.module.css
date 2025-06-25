@@ -43,6 +43,10 @@ main{
     z-index: 10;
 }
 
+.invisible{
+    display: none
+}
+
 .scroller >p {
     font-family: 'Rare';
     text-align: center;
