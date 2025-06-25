@@ -11,6 +11,10 @@
 .menu, .build {
     border-radius: 13px;
 }
+/* center text */
+.promo, .promoInfo, .build{
+    text-align: center;
+}
 
 .icon{
     background-color: transparent;
