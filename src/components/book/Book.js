@@ -26,6 +26,7 @@ export const Book = () => {
             return i !== item
         }))
     }
+    // update promo on build change
     useEffect(()=>{
         setPromo(build.at(-1))
     }, [build])
@@ -34,7 +35,7 @@ export const Book = () => {
             <Promo page={promo}/>
             <Menu menu={Object.keys(menu_info)} handleUpdatePromo={handleUpdatePromo}/>
             <BuildContainer build={build} cost={`cost`} time={`time`} handleRemoveBuild={handleRemoveBuild} handleUpdatePromo={handleUpdatePromo}/>
-            <PromoInfoContainer item={promo} handleAddBuild={handleAddBuild}/>
+            <PromoInfoContainer item={promo} handleAddBuild={handleAddBuild} build={build}/>
         </div>
     )
 }
