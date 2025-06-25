@@ -10,12 +10,11 @@ export const PromoInfoContainer = ({item, handleAddBuild, build}) => {
         setVisible(!visible)
     }
     useEffect(()=>{
-        console.log(width)
     },[visible])
     return (
         <div className={style.promoInfoContainer}
         style={{
-            transform: `${!visible ? `translateX(${width*.45}px)` : ''}`,
+            transform: `${!visible ? `translateX(${width*.43}px)` : ''}`,
         }}>
             <PromoInfo 
                 item={item} 
