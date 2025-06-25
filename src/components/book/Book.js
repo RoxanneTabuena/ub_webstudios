@@ -1,6 +1,8 @@
 import { Menu } from './Menu'
 import { Promo } from './Promo'
 import { Build } from './Build'
+import {PromoInfo} from './PromoInfo'
+import { menu_info } from './book.content'
 import style from './book.module.css'
 
 export const Book = () => {
@@ -13,9 +15,10 @@ export const Book = () => {
 
     return (
         <div className={style.book}>
-            <Promo />
-            <Menu />
-            <Build build={[`option`]} cost={`cost`} time={`time`}/>
+            <Promo page={promo}/>
+            <Menu menu={Object.keys(menu_info)} handleUpdatePromo={handleUpdatePromo}/>
+            <Build build={[`option`]} cost={`cost`} time={`time`} page={'page'} handleRemoveBuild={handleRemoveBuild}/>
+            <PromoInfo page={promo} handleAddBuild={handleAddBuild}/>
         </div>
     )
 }
