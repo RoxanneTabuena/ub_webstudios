@@ -2,13 +2,13 @@
     z-index: 110;
 }
 /* add vignette styling*/
-.build, .promoInfo, .promo, .menu{
+.build, .promoInfo, .promo, .menu, .buildItem{
     border: 3px solid black;
 }
 .promo, .promoInfo{
     border-radius: 50%;
 }
-.menu, .build {
+.menu, .build, .buildItem, .buildInfo {
     border-radius: 13px;
 }
 /* center text */
@@ -84,6 +84,12 @@
 .build{
     height: 55%;
     width: 30%;
-    background-color: darkseagreen;
     pointer-events: all;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.buildItem, .buildInfo{
+    background-color: darkseagreen;
 }

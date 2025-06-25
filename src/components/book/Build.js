@@ -12,17 +12,21 @@ export const Build = ({build, handleUpdatePromo, handleRemoveBuild}) => {
     }
     return (
         <div className={style.build}>
-            <h2>Build</h2>
-            {build.map((item)=>{
-            return <BuildItem 
-                        key={item} 
-                        item={item}
-                        handleUpdatePromo={handleUpdatePromo}
-                        handleRemoveBuild={handleRemoveBuild}/>
-            })}
-            <p>{`${format} total:${cost}`}</p>
-            <p>estimated build time: {time} days</p>
-            <p onClick={handleSwitchFormat}>switch pricing format</p>
+            <h2 className={style.buildInfo}>Build</h2>
+            <div>
+                {build.map((item)=>{
+                return <BuildItem 
+                            key={item} 
+                            item={item}
+                            handleUpdatePromo={handleUpdatePromo}
+                            handleRemoveBuild={handleRemoveBuild}/>
+                })}
+            </div>
+            <div className={style.buildInfo}>
+                <p>{`${format} total:${cost}`}</p>
+                <p>estimated build time: {time} days</p>
+                <p onClick={handleSwitchFormat}>switch pricing format</p>
+            </div>
         </div>
     )
 }
