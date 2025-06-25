@@ -1,0 +1,31 @@
+.book{
+    z-index: 110;
+}
+
+.book h2{
+    font-family: 'Rare';
+}
+
+.promo{
+    height: 60vh;
+    background-color: turquoise;
+    position: relative;
+    width: 100%;
+}
+.menu{
+    position: relative;
+    height: 40vh;
+    width: 100%;
+    position: relative;
+    background-color: mediumspringgreen;
+}
+
+.build{
+    width: 30vh;
+    height:100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+}
+/* background-color: darkseagreen; */
