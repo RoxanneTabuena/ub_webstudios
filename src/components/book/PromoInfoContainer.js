@@ -11,6 +11,9 @@ export const PromoInfoContainer = ({item, handleAddBuild, build}) => {
     }
     useEffect(()=>{
     },[visible])
+    useEffect(()=>{
+        setVisible(true)
+    },[item])
     return (
         <div className={style.promoInfoContainer}
         style={{
