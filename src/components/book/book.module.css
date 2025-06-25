@@ -19,21 +19,39 @@
     position: relative;
     background-color: mediumspringgreen;
 }
-
 .build{
-    width: 30vh;
+    width: 100vw;
     height:100vh;
     position: absolute;
-    right: 0;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 130;
+    pointer-events: none;
+}.promoInfo{
+    width: 100vw;
+    height:100vh;
+    position: absolute;
+    left: 0;
     top: 0;
     background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 120;
+    pointer-events: none;
+}
+.promoInfoCard{
+    height: 20%;
+    background-color: lightgoldenrodyellow;
+    width:60%;
 }
 
 .buildCard{
     height: 35%;
-    width: 100%;
+    width: 30%;
     background-color: darkseagreen;
 }
