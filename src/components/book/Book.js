@@ -12,12 +12,6 @@ export const Book = () => {
     const [promo, setPromo] = useState("basic promo + landing")
     const [build, setBuild] = useState(["basic promo + landing"])
     const navigate = useNavigate()
-    const calculateCost = (build) => {
-        return "build total"
-    }    
-    const estimateBuildTime = (build) => {
-        return "estimated build deadline"
-    }
     const handleUpdatePromo = (item) => {
         setPromo(item)
     }
@@ -41,7 +35,7 @@ export const Book = () => {
             <img className={style.icon} src={closeIcon} alt="close Icon" onClick={close}></img>
             <Promo page={promo}/>
             <Menu menu={Object.keys(menu_info)} handleUpdatePromo={handleUpdatePromo}/>
-            <BuildContainer build={build} cost={`cost`} time={`time`} handleRemoveBuild={handleRemoveBuild} handleUpdatePromo={handleUpdatePromo}/>
+            <BuildContainer build={build} handleRemoveBuild={handleRemoveBuild} handleUpdatePromo={handleUpdatePromo}/>
             <PromoInfoContainer item={promo} handleAddBuild={handleAddBuild} build={build}/>
         </div>
     )
