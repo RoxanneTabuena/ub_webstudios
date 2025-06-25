@@ -45,7 +45,11 @@
     align-items: center;
     z-index: 120;
     pointer-events: none;
+    transition: transform 0.5s ease-in-out;
+
 }
+
+
 .promoInfo{
     height: 20%;
     background-color: lightgoldenrodyellow;
