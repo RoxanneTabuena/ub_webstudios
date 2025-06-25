@@ -31,7 +31,7 @@ export const Book = () => {
             <Promo page={promo}/>
             <Menu menu={Object.keys(menu_info)} handleUpdatePromo={handleUpdatePromo}/>
             <BuildContainer build={build} cost={`cost`} time={`time`} handleRemoveBuild={handleRemoveBuild} handleUpdatePromo={handleUpdatePromo}/>
-            <PromoInfoContainer page={promo} handleAddBuild={handleAddBuild}/>
+            <PromoInfoContainer item={promo} handleAddBuild={handleAddBuild}/>
         </div>
     )
 }
