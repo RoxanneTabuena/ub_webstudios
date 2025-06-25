@@ -2,6 +2,15 @@
     z-index: 110;
 }
 
+.icon{
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 130;
+    width: 10%;
+}
+
 .book h2{
     font-family: 'Rare';
 }
