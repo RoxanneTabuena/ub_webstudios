@@ -11,6 +11,7 @@ export const PromoInfoContainer = ({item, handleAddBuild, build}) => {
     }
     useEffect(()=>{
     },[visible])
+    // make visible on every "item" change
     useEffect(()=>{
         setVisible(true)
     },[item])
