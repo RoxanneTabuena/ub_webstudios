@@ -1,11 +1,12 @@
-import { PromoInfoCard } from './PromoInfoCard'
 import style from './book.module.css'
 
-export const PromoInfo = ({page, visible}) => {
+export const PromoInfo = ({item, handleAddBuild}) => {
 
     return (
-        <div className={style.promoInfo} style={{display: `${!visible? `hidden`: `auto`}`}}>
-            <PromoInfoCard page={page}/>
+        <div className={style.promoInfo} style={{top: "calculated top"}}>
+            <h2>PromoInfo</h2>
+            <p>{item}</p>
+            <p>{`add ${item} to build`}</p>
         </div>
     )
 }

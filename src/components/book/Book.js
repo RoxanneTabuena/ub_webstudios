@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Menu } from './Menu'
 import { Promo } from './Promo'
 import { BuildContainer } from './BuildContainer'
-import {PromoInfo} from './PromoInfo'
+import {PromoInfoContainer} from './PromoInfoContainer'
 import { menu_info } from './book.content'
 import style from './book.module.css'
 
@@ -31,7 +31,7 @@ export const Book = () => {
             <Promo page={promo}/>
             <Menu menu={Object.keys(menu_info)} handleUpdatePromo={handleUpdatePromo}/>
             <BuildContainer build={build} cost={`cost`} time={`time`} handleRemoveBuild={handleRemoveBuild} handleUpdatePromo={handleUpdatePromo}/>
-            <PromoInfo page={promo} handleAddBuild={handleAddBuild}/>
+            <PromoInfoContainer page={promo} handleAddBuild={handleAddBuild}/>
         </div>
     )
 }
