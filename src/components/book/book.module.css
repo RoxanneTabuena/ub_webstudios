@@ -1,6 +1,16 @@
 .book{
     z-index: 110;
 }
+/* add vignette styling*/
+.build, .promoInfo, .promo, .menu{
+    border: 3px solid black;
+}
+.promo, .promoInfo{
+    border-radius: 50%;
+}
+.menu, .build {
+    border-radius: 13px;
+}
 
 .icon{
     background-color: transparent;
@@ -22,6 +32,7 @@
     width: 100%;
 }
 .menu{
+    text-align: left;
     position: relative;
     height: 45vh;
     width: 100%;
@@ -44,14 +55,14 @@
 
 .promoInfoContainer{
     width: 100vw;
-    height:100vh;
+    height:65vh;
     position: absolute;
     left: 0;
     top: 0;
     background-color: transparent;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     z-index: 120;
     pointer-events: none;
     transition: transform 0.5s ease-in-out;
@@ -60,9 +71,9 @@
 
 
 .promoInfo{
-    height: 15%;
     background-color: lightgoldenrodyellow;
-    width:60%;
+    width: 65%;
+    aspect-ratio: 2;
     pointer-events: all;
 }
 
