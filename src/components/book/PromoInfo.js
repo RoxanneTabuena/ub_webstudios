@@ -6,7 +6,7 @@ export const PromoInfo = ({item, handleAddBuild}) => {
         <div className={style.promoInfo} style={{top: "calculated top"}}>
             <h2>PromoInfo</h2>
             <p>{item}</p>
-            <p>{`add ${item} to build`}</p>
+            <p onClick={()=>handleAddBuild(item)}>{`add ${item} to build`}</p>
         </div>
     )
 }

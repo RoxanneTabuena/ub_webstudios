@@ -50,6 +50,7 @@
     height: 20%;
     background-color: lightgoldenrodyellow;
     width:60%;
+    pointer-events: all;
 }
 
 .build{
