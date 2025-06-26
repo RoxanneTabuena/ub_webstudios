@@ -13,13 +13,8 @@
     align-items: flex-start;
     margin: 1rem auto;
     margin-left: 1rem;
-}
-
-.banner *{
     font-family: 'Titles';
-    margin: 0 5px 0 5px;
 }
-
 
 .topSec{
     text-align: left;
@@ -31,6 +26,39 @@
     align-items: flex-start;
 }
 
+/* general formats */
+.formats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 35%;
+    aspect-ratio: .75;
+}
+.formats p{
+    font-family: 'Rare';
+    margin: 12%;
+}
+
+.mobile, .desk, .flyer {
+    position: relative;
+    background-position: cover;
+    background-size: 100%;
+    z-index: 20;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.mobile{
+    background-image: url(../../assets/img/MobilePlaceholder.png);
+}
+.desk{
+    background-image: url(../../assets/img/mobile.png);
+}
+.flyer{
+    background-image: url(../../assets/img/FlyerPlaceholder.png);
+}
 /* mobile*/
 @media only screen and (max-width: 480px) {
     /* mobile typography */
