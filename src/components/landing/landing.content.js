@@ -32,3 +32,18 @@ export const promo_info = {
         src: mobileFirst
     }
 }
+
+export const deals_info={
+    a: {
+        text: '',
+        price: ''
+    },
+    b: {
+        text: '',
+        price: ''
+    },
+    c: {
+        text: '',
+        price: ''
+    },
+}

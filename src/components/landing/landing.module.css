@@ -59,6 +59,33 @@
 .flyer{
     background-image: url(../../assets/img/FlyerPlaceholder.png);
 }
+/* general deals */
+.dealsContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 55%;
+    aspect-ratio: .75;
+    z-index: 10;
+}
+.deals{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.standard{
+    position: absolute;
+    background-image: url(../../assets/img/DealsPlaceholder_.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    aspect-ratio: .72;
+    z-index: 20;
+}
+
+.deluxe{
+    pointer-events: none;
+}
 /* mobile*/
 @media only screen and (max-width: 480px) {
     /* mobile typography */
