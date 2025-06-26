@@ -1,129 +1,49 @@
 /* general banner */
-
-.banner>p{
-    margin: 7px auto;
+.landing {
+    height: inherit;
+    width: inherit;
+    background-image: url('../../assets/img/BannerPlaceholder.png');
+    background-position-y: top;
+    background-repeat: no-repeat;
 }
 
-.bannerHead>*{
+.banner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem auto;
+    margin-left: 1rem;
+}
+
+.banner *{
     font-family: 'Titles';
     margin: 0 5px 0 5px;
 }
 
-.bannerHead{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-}
 
-.left{
+.topSec{
     text-align: left;
 }
 
-.tops{
+.bottomSec{
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-.bannerButts{
-    display: flex;
-    justify-content: space-around;
-    width: inherit;
-}
-
-/* general promo */
-.promo{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.promoCard{
-    position: relative;
-    transition: transform 0.9s;
-    transform-style: preserve-3d;
-}
-.cardFront, .cardBack, .promoCard{
-    height: inherit;
-    width: inherit;
-}
- .cardContainer:hover .promoCard, .flipped {
-    transform: rotateY(180deg);
-}
-.cardFront,
-.cardBack {
-    position: absolute;
-    backface-visibility: hidden;
-    border-radius: 15px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.cardFront{
-    background-color: chartreuse;
-    font-family: 'Rare';
-    text-align: center;
-}
-.cardBack{
-    background-color: blueviolet;
-    transform: rotateY(180deg);
-}
-.cardBack>h3{
-    font-family: 'Titles';
-}
-
-/* mobile specifics*/
+/* mobile*/
 @media only screen and (max-width: 480px) {
-    /* mobile layout */
-    .landing{
-        padding: 20px 5px 0 5px;
-    }
-    .banner>p{
-        max-width: 90%;
-    }
-    .cardContainer{
-        pointer-events: none;
-    }
     /* mobile typography */
     h2{
         font-size: 33px;
     }
-    .cardBack>h3{
-        font-family: 'Titles';
-        font-size: 33px;
-    }
 
 }
-/* desktop specifics */
-@media only screen and (min-width: 481px) {
-    /*desktop layout */
-    .landing{
-        padding: 20px 5px 0 5px;
-    }
-    .banner{
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        margin: auto;
-        padding: 5%;
-    }
-    .banner>img{
-        max-height: 30vh;
-    }
-    .bannerLeft{
-        max-width: 476px;
-    }
 
-    .bannerLeft>*{
-        margin-top: 20px
-    }
-    /* desktop typography */
+/* desk*/
+@media only screen and (min-width: 481px) {
+    /* desk typography */
     h2{
         font-size: 50px;
     }
-
-
 }
