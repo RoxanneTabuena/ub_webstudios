@@ -6,7 +6,7 @@ export const PageInfo = ({ height}) => {
     const {pathname} = useLocation()
     const title = pathname === '/' ? 'Welcome' : pathname.split('/')[1]
     // set font height according to icon height
-    const letterHeight = useRef(height/2.3)
+    const letterHeight = useRef(height/2.2)
     return (
         <div className={style.pageInfo}
             style={{
