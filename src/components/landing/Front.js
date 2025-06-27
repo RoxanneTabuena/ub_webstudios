@@ -1,13 +1,10 @@
 import style from './landing.module.css'
-import { getWidthAsPercent } from './landing.utils'
-export const Standard = ({widthFactor, bottom, right, content}) => {
+
+export const Front = ({content, height}) => {
     
     return (
-            <div className={style.standard}
-            style={{
-                bottom: bottom,
-                right: right,
-                width: getWidthAsPercent(widthFactor)}}>
+            <div className={style.front}
+                style={{height: height}}>
                     <h3>{content.text}</h3>
                     <p className={style.title}>for only</p>
                     <div className={style.price}>

@@ -1,18 +1,16 @@
-export const getWidthAsPercent = (factor) => {
-    return `${60/factor}%`
+export const getBackHeight = (total, queue) => {
+    const factors = [.6, .5, .4]
+    return `${total*factors[queue-1]}px`
+}
+export const getFrontHeight = (total) => {
+    return `${total*.8}px`
 }
 
-export const getPosFromHeight = (height) => {
-    
-    return {
-            a: {
-            bottom: .0545*height,
-            right: .06*height},
-            b: {
-            bottom: .518*height,
-            right: .03*height},
-            c: {
-            bottom: 0,
-            right: .01*height}
-            }
+export const getPOS = (queue) => {
+    const pos_info = [
+        {bottom: 20, right: 0},
+        {bottom: 150, right: 0},
+        {bottom: 0, right: 100}
+    ]
+    return pos_info[queue-1]
 }

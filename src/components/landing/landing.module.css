@@ -64,7 +64,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    height: 55%;
+    height: 50%;
     aspect-ratio: .75;
     z-index: 10;
 }
@@ -74,20 +74,34 @@
     width: 100%;
 }
 
-.standard{
+
+.deal{
     position: absolute;
-    background-image: url(../../assets/img/DealsPlaceholder_.png);
+}
+
+.front, .back{
+    aspect-ratio: .72;
     background-repeat: no-repeat;
     background-size: contain;
-    aspect-ratio: .72;
-    z-index: 20;
+}
+
+.front{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     font-family: 'Rare';
-    padding-left: 1rem;
+    padding: 2.1rem;
+    z-index: 20;
+    background-image: url(../../assets/img/DealsPlaceholder_.png);
 }
+
+.back{
+    z-index: 10;
+    background-image: url(../../assets/img/DealsHiddenPlaceholder_.png);
+}
+/* deal text styling */
 
 .price{
     display: flex;

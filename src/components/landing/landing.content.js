@@ -35,7 +35,7 @@ export const promo_info = {
 
 export const deals_info={
     a: {
-        text: 'Personalized Site + 500 Flyers',
+        text: 'Custom Site + 500 Flyers',
         price: '499'
     },
     b: {
