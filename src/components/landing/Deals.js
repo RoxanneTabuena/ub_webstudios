@@ -5,16 +5,18 @@ import { useState, useEffect } from 'react'
 import { getBackHeight, getFrontHeight, getPOS } from './landing.utils'
 import style from './landing.module.css'
 
-export const Deals = () => {
+export const Deals = ({halt}) => {
         const [dealsRef, dealsHeight] = useComponentHeight()
         const [feature, setFeature] = useState(1)
     useEffect(() => {
-        const updateFeature = setInterval(() => {
-            setFeature(prev=>{return prev === 3? 1: prev+1});
-        }, 2000);
-
-            return () => clearInterval(updateFeature);
-        }, []);
+        if(!halt){
+            const updateFeature = setInterval(() => {
+                setFeature(prev=>{return prev === 3? 1: prev+1});
+            }, 2000);
+    
+                return () => clearInterval(updateFeature);
+        }
+        }, [halt]);
     return (
             <div ref={dealsRef} className={style.dealsContainer}>
                 <div className={style.deals}>
