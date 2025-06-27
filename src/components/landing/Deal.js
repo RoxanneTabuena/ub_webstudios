@@ -14,7 +14,8 @@ export const Deal = ({content, feature, queue, backHeight, frontHeight, pos}) =>
     }, [feature])
     return (
             <div className={style.deal}
-                style={{bottom: pos.bottom, right: pos.right}}
+                style={{bottom: pos.bottom, right: pos.right, height:frontHeight}}
+                onClick={()=> handleManualFeature(queue)}
             >
                 {flipped?
                 <Back height={backHeight}/> : <Front content={content} height={frontHeight}/>

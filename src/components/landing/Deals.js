@@ -17,6 +17,9 @@ export const Deals = ({halt}) => {
                 return () => clearInterval(updateFeature);
         }
         }, [halt]);
+    const handleManualFeature = (queue) => {
+        setFeature(queue)
+    }
     return (
             <div ref={dealsRef} className={style.dealsContainer}>
                 <div className={style.deals}>
