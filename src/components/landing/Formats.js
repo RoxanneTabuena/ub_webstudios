@@ -4,16 +4,17 @@ import { Mobile } from './Mobile'
 import { Flyer } from './Flyer'
 import style from './landing.module.css'
 
-export const Formats = () => {
+export const Formats = ({halt}) => {
     const [display, setDisplay] = useState(0)
     const displays = [ <Mobile/>, <Desk/>, <Flyer/>]
-    useEffect(()=>{
-        const displaySwitch = setInterval(()=>{
-            const next = display+1
-            setDisplay(next === displays.length? 0 : next)
-        },7000)
-        return clearInterval(displaySwitch)
-    },[display])
+
+    useEffect(() => {
+        const updateDisplay = setInterval(() => {
+            setDisplay(prev=>{return prev === 2? 0: prev+1});
+        }, 7000);
+
+            return () => clearInterval(updateDisplay);
+        }, []);
     return (
             <div className={style.formats}>
                 {displays[display]}
