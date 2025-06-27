@@ -9,7 +9,7 @@ export const Standard = ({widthFactor, bottom, right, content}) => {
                 right: right,
                 width: getWidthAsPercent(widthFactor)}}>
                     <h3>{content.text}</h3>
-                    <p>for only</p>
+                    <p className={style.title}>for only</p>
                     <div className={style.price}>
                         <h2>{content.price}</h2>
                         <p>$</p>
