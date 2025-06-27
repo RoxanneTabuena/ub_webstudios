@@ -9,12 +9,14 @@ export const Formats = ({halt}) => {
     const displays = [ <Mobile/>, <Desk/>, <Flyer/>]
 
     useEffect(() => {
-        const updateDisplay = setInterval(() => {
-            setDisplay(prev=>{return prev === 2? 0: prev+1});
-        }, 7000);
-
-            return () => clearInterval(updateDisplay);
-        }, []);
+        if(!halt){
+            const updateDisplay = setInterval(() => {
+                setDisplay(prev=>{return prev === 2? 0: prev+1});
+            }, 7000);
+    
+                return () => clearInterval(updateDisplay);
+        }
+        }, [halt]);
     return (
             <div className={style.formats}>
                 {displays[display]}
