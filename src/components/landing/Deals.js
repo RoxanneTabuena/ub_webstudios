@@ -5,18 +5,16 @@ import { useState, useEffect } from 'react'
 import { getBackHeight, getFrontHeight, getPOS } from './landing.utils'
 import style from './landing.module.css'
 
-export const Deals = ({halt}) => {
+export const Deals = () => {
         const [dealsRef, dealsHeight] = useComponentHeight()
         const [feature, setFeature] = useState(1)
     useEffect(() => {
-        if(!halt){
             const updateFeature = setInterval(() => {
                 setFeature(prev=>{return prev === 3? 1: prev+1});
-            }, 2000);
+            }, 6000);
     
                 return () => clearInterval(updateFeature);
-        }
-        }, [halt]);
+        }, []);
     const handleManualFeature = (queue) => {
         setFeature(queue)
     }
@@ -30,6 +28,7 @@ export const Deals = ({halt}) => {
                         backHeight={getBackHeight(dealsHeight, 1)}
                         frontHeight={getFrontHeight(dealsHeight)}
                         pos={getPOS(1)}
+                        handleManualFeature={handleManualFeature}
                         />
                     <Deal 
                         content={deals_info.b} 
@@ -38,6 +37,7 @@ export const Deals = ({halt}) => {
                         backHeight={getBackHeight(dealsHeight, 2)}
                         frontHeight={getFrontHeight(dealsHeight)}
                         pos={getPOS(2)}
+                        handleManualFeature={handleManualFeature}
                         />
                     <Deal 
                         content={deals_info.c} 
@@ -46,6 +46,7 @@ export const Deals = ({halt}) => {
                         backHeight={getBackHeight(dealsHeight, 3)}
                         frontHeight={getFrontHeight(dealsHeight)}
                         pos={getPOS(3)}
+                        handleManualFeature={handleManualFeature}
                         />
                 </div>
             </div>
