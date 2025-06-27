@@ -3,7 +3,7 @@ import { Front } from './Front'
 import { Back } from './Back'
 import style from './landing.module.css'
 
-export const Deal = ({content, feature, queue, backHeight, frontHeight, pos}) => {
+export const Deal = ({content, feature, queue, backHeight, frontHeight, pos, handleManualFeature}) => {
     const [flipped, setFlipped] = useState(feature===queue)
     useEffect(()=>{
         if(feature === queue){
@@ -18,7 +18,7 @@ export const Deal = ({content, feature, queue, backHeight, frontHeight, pos}) =>
                 onClick={()=> handleManualFeature(queue)}
             >
                 {flipped?
-                <Back height={backHeight}/> : <Front content={content} height={frontHeight}/>
+                <Back height={backHeight}/> : <Front content={content}/>
                 }
             </div>
     )

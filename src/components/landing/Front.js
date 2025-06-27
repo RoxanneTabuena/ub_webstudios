@@ -1,10 +1,9 @@
 import style from './landing.module.css'
 
-export const Front = ({content, height}) => {
+export const Front = ({content}) => {
     
     return (
-            <div className={style.front}
-                style={{height: height}}>
+            <div className={style.front}>
                     <h3>{content.text}</h3>
                     <p className={style.title}>for only</p>
                     <div className={style.price}>

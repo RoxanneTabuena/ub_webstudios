@@ -12,7 +12,7 @@ export const Formats = ({halt}) => {
         if(!halt){
             const updateDisplay = setInterval(() => {
                 setDisplay(prev=>{return prev === 2? 0: prev+1});
-            }, 7000);
+            }, 11000);
     
                 return () => clearInterval(updateDisplay);
         }
