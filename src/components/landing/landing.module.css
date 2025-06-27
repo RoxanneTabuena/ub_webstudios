@@ -81,16 +81,30 @@
     background-size: contain;
     aspect-ratio: .72;
     z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Rare';
 }
 
-.deluxe{
-    pointer-events: none;
+.price{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.standard h3{
+    text-align: left;
 }
 /* mobile*/
 @media only screen and (max-width: 480px) {
     /* mobile typography */
     h2{
         font-size: 33px;
+    }
+    h3{
+        font-size: 21px;
     }
 
 }

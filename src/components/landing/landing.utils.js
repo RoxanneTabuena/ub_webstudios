@@ -1,5 +1,5 @@
 export const getWidthAsPercent = (factor) => {
-    return `${66/factor}%`
+    return `${60/factor}%`
 }
 
 export const getPosFromHeight = (height) => {
@@ -10,9 +10,9 @@ export const getPosFromHeight = (height) => {
             right: .06*height},
             b: {
             bottom: .518*height,
-            right: 0},
+            right: .03*height},
             c: {
             bottom: 0,
-            right: 0}
+            right: .01*height}
             }
 }

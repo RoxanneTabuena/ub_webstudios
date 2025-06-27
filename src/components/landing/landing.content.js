@@ -35,15 +35,15 @@ export const promo_info = {
 
 export const deals_info={
     a: {
-        text: '',
-        price: ''
+        text: 'Personalized Site + 500 Flyers',
+        price: '499'
     },
     b: {
-        text: '',
-        price: ''
+        text: 'Shopify & Square integration',
+        price: '1499'
     },
     c: {
-        text: '',
-        price: ''
+        text: 'Booking',
+        price: '999'
     },
 }
