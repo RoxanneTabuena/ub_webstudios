@@ -77,6 +77,9 @@
 
 .deal{
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .front, .back{
@@ -86,7 +89,6 @@
 }
 
 .front{
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
